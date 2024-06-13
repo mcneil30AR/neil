@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Arqka</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer id="silla" camera-controls touch-action="pan-y" src="silla.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.png" shadow-intensity="0.71" environment-image="music_hall_01_1k.hdr" shadow-softness="1" tone-mapping="neutral">
+      
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+
+      <div class="controls">
+        <div>Cambiar color: <select id="variant"></select></div>
+      </div>
+
+    </model-viewer>  
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+    <script>
+      const modelViewerVariants = document.querySelector("model-viewer#silla");
+      const select = document.querySelector('#variant');
+      
+      modelViewerVariants.addEventListener('load', () => {
+        const names = modelViewerVariants.availableVariants;
+        for (const name of names) {
+          const option = document.createElement('option');
+          option.value = name;
+          option.textContent = name;
+          select.appendChild(option);
+        }
+        // Adds a default option.
+        const option = document.createElement('option');
+          option.value = 'default';
+          option.textContent = 'Default';
+          select.appendChild(option);
+      });
+      
+      select.addEventListener('input', (event) => {
+        modelViewerVariants.variantName = event.target.value === 'default' ? null : event.target.value;
+      });
+      </script>
+      
+  </body>
+</html>
