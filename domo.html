@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo GLTF con Domo en Model Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 100%;
+      height: 500px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Modelo GLTF con Domo en Model Viewer</h1>
+
+  <!-- Elemento Model Viewer con environment-image -->
+  <model-viewer id="mainModelViewer" src="silla.glb" alt="Modelo GLTF" auto-rotate camera-controls environment-image="./img/entorno.hdr">
+  </model-viewer>
+
+  <!-- Botones para cambiar el modelo -->
+  <div id="model-buttons">
+    <button onclick="changeModel('silla.glb')">Modelo 1</button>
+    <button onclick="changeModel('silla2.glb')">Modelo 2</button>
+    <button onclick="changeModel('bano.glb')">Modelo 3</button>
+  </div>
+
+  <script>
+    function changeModel(modelSrc) {
+      const modelViewer = document.getElementById('mainModelViewer');
+      modelViewer.src = modelSrc;
+    }
+  </script>
+
+</body>
+</html>
