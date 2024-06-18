@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelos GLTF con Variantes en Model Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 100%;
+      height: 500px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Modelos 3D con Variantes en Model Viewer</h1>
+
+  <!-- Modelo 1 con variantes -->
+  <model-viewer id="model1" src="silla.glb" alt="Modelo 1" auto-rotate camera-controls>
+    <div id="model1-variants">
+      <button onclick="setVariant('model1', 'variante1')">Variante 1</button>
+      <button onclick="setVariant('model1', 'variante2')">Variante 2</button>
+      <button onclick="setVariant('model1', 'variante3')">Variante 3</button>
+    </div>
+  </model-viewer>
+
+  <!-- Modelo 2 con variantes -->
+  <model-viewer id="model2" src="bano.glb" alt="Modelo 2" auto-rotate camera-controls>
+    <div id="model2-variants">
+      <button onclick="setVariant('model2', 'variante1')">Variante 1</button>
+      <button onclick="setVariant('model2', 'variante2')">Variante 2</button>
+      <button onclick="setVariant('model2', 'variante3')">Variante 3</button>
+    </div>
+  </model-viewer>
+
+  <script>
+    function setVariant(modelId, variantName) {
+      const modelViewer = document.getElementById(modelId);
+      modelViewer.variantName = variantName;
+    }
+  </script>
+
+</body>
+</html>
