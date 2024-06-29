@@ -20,6 +20,8 @@
   <!-- Elemento Model Viewer -->
   <model-viewer id="mainModelViewer" autoplay ar ar-modes="webxr scene-viewer" scale="0.1 0.1 0.1" shadow-intensity="1" src="aficionado.glb" alt="Modelo GLTF" auto-rotate camera-controls touch-action="pan-y" ar ar-modes="scene-viewer webxr quick-look"></model-viewer>
 
+  <button id="captureButton">Capturar Foto</button>
+
   <!-- Botones para cambiar el modelo -->
   <div id="model-buttons">
     <button onclick="changeModel('silla.glb')">Modelo 1</button>
@@ -33,6 +35,37 @@
       modelViewer.src = modelSrc;
     }
   </script>
+
+<script>
+  const modelViewer = document.querySelector('#myModel');
+  const captureButton = document.querySelector('#captureButton');
+  const snapshotContainer = document.querySelector('#snapshot');
+
+  captureButton.addEventListener('click', async () => {
+      // Espera a que el modelo esté en modo AR
+      if (modelViewer.isInAR) {
+          try {
+              const blob = await modelViewer.toBlob({ mimeType: 'image/png' });
+              const url = URL.createObjectURL(blob);
+              snapshotContainer.src = url;
+          } catch (error) {
+              console.error('Error capturing the AR snapshot:', error);
+          }
+      } else {
+          console.log('El modelo no está en modo AR.');
+      }
+  });
+
+  // Opcional: Añadir un listener para cambiar el estado del botón dependiendo del modo AR
+  modelViewer.addEventListener('ar-status', (event) => {
+      if (event.detail.status === 'session-started') {
+          captureButton.disabled = false;
+      } else {
+          captureButton.disabled = true;
+      }
+  });
+</script>
+
 
 </body>
 </html>
