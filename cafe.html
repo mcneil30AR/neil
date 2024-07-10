@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aficionado</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 100%;
+      height: 600px;
+      margin: 20px 0;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fan Jaiba Brava</h1>
+
+  <!-- Elemento Model Viewer -->
+  <model-viewer id="mainModelViewer" autoplay ar ar-modes="webxr scene-viewer" scale="0.1 0.1 0.1" shadow-intensity="1" src="cafe.glb" alt="Modelo GLTF" auto-rotate camera-controls touch-action="pan-y" ar ar-modes="scene-viewer webxr quick-look"></model-viewer>
+
+  <button id="captureButton">Capturar Foto</button>
+
+  <!-- Botones para cambiar el modelo -->
+  <div id="model-buttons">
+    <button onclick="changeModel('silla.glb')">Modelo 1</button>
+    <button onclick="changeModel('silla2.glb')">Modelo 2</button>
+    <button onclick="changeModel('bano.glb')">Modelo 3</button>
+  </div>
+
+  <script>
+    function changeModel(modelSrc) {
+      const modelViewer = document.getElementById('mainModelViewer');
+      modelViewer.src = modelSrc;
+    }
+  </script>
+
+<script>
+  const modelViewer = document.querySelector('#myModel');
+  const captureButton = document.querySelector('#captureButton');
+  const snapshotContainer = document.querySelector('#snapshot');
+
+  captureButton.addEventListener('click', async () => {
+      // Espera a que el modelo esté en modo AR
+      if (modelViewer.isInAR) {
+          try {
+              const blob = await modelViewer.toBlob({ mimeType: 'image/png' });
+              const url = URL.createObjectURL(blob);
+              snapshotContainer.src = url;
+          } catch (error) {
+              console.error('Error capturing the AR snapshot:', error);
+          }
+      } else {
+          console.log('El modelo no está en modo AR.');
+      }
+  });
+
+  // Opcional: Añadir un listener para cambiar el estado del botón dependiendo del modo AR
+  modelViewer.addEventListener('ar-status', (event) => {
+      if (event.detail.status === 'session-started') {
+          captureButton.disabled = false;
+      } else {
+          captureButton.disabled = true;
+      }
+  });
+</script>
+
+
+</body>
+</html>
