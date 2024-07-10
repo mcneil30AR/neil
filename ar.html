@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+  margin: 1em;
+  padding: 0;
+  font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
+  color: #244376;
+}
+
+#card {
+  margin: 3em auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+model-viewer {
+  width: 100%;
+  height: 400px;
+  background-color: #70bcd1;
+  --poster-color: #ffffff00;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.attribution h1 {
+  margin: 0 0 0.25em;
+}
+
+.attribution img {
+  opacity: 0.5;
+  height: 2em;
+}
+
+.attribution .cc {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5em;
+}
+    </style>
+    
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+    
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+
+  </head> 
+<body>
+  <div id="card">
+    <!-- All you need to put beautiful, interactive 3D content on your site: -->
+    <model-viewer src="cafe.glb"
+                  poster="poster.png"
+                  alt="A 3D model of an astronaut"
+                  shadow-intensity="1"
+                  camera-controls
+                  auto-rotate ar>
+    </model-viewer>
+    <section class="attribution">
+      <span>
+        <h1>Astronaut</h1>
+        <span>By <a href="https://poly.google.com/view/dLHpzNdygsg" target="_blank">Poly</a></span>
+      </span>
+      <a class="cc" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg">
+      </a>
+    </section>
+    
+  </div>
+  
+  
+  <footer>
+    <span>This page is a basic demo of the <a href="https://github.com/GoogleWebComponents/model-viewer" target="_blank">&lt;model-viewer&gt;</a> web component.</span>
+    <span>It makes displaying 3D and AR content on the web easy ✌️</span>
+    <a href="https://glitch.com/edit/#!/remix/model-viewer">
+      <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix button" aria-label="remix" height="33">
+    </a>
+  </footer>
+  
+  
+  <!-- 💁 Include both scripts below to support all browsers! -->
+
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+</body>
+</html>
