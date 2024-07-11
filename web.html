@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego en 3ra persona</title>
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <model-viewer id="player" src="aficion.gltf" alt="Modelo 3D del jugador"></model-viewer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const player = document.getElementById('player');
+
+    // Inicializar el modelo 3D
+    player.addEventListener('load', () => {
+        console.log('Modelo cargado');
+    });
+
+    // Función para mover al jugador
+    function movePlayer(x, y, z) {
+        player.setAttribute('animation-mixer', { loop: 'pingpong' });
+        player.setAttribute('animation-mixer', { clip: '*' });
+        player.setAttribute('position', { x: x, y: y, z: z });
+    }
+
+    // Detectar teclas para mover al jugador
+    document.addEventListener('keydown', (event) => {
+        const speed = 0.1;
+        switch(event.key) {
+            case 'ArrowUp':
+                movePlayer(player.object3D.position.x, player.object3D.position.y, player.object3D.position.z - speed);
+                break;
+            case 'ArrowDown':
+                movePlayer(player.object3D.position.x, player.object3D.position.y, player.object3D.position.z + speed);
+                break;
+            case 'ArrowLeft':
+                movePlayer(player.object3D.position.x - speed, player.object3D.position.y, player.object3D.position.z);
+                break;
+            case 'ArrowRight':
+                movePlayer(player.object3D.position.x + speed, player.object3D.position.y, player.object3D.position.z);
+                break;
+        }
+    });
+
+    // Detectar colisiones con objetos (pseudocódigo)
+    function checkCollisions() {
+        // Implementar lógica de colisiones con las habitaciones y objetos
+    }
+
+    // Llamar a la función de colisiones periódicamente
+    setInterval(checkCollisions, 1000 / 60);
+});
+
+    </script>
+</body>
+</html>
