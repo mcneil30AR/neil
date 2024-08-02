@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+       body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+      </style>
+</head>
+<body>
+    <div id="preloader">Loading...</div>
+    <canvas id="bg"></canvas>
+    <section id="trabajos">Trabajos</section>
+    <section id="about">About Me</section>
+    <section id="contacto">Contacto</section>
+    <script type="module">
+        let scene, camera, renderer, loader;
+const canvas = document.querySelector('#bg');
+const preloader = document.querySelector('#preloader');
+const sections = ['trabajos', 'about', 'contacto'];
+const models = {};
+const mixers = {};
+const clock = new THREE.Clock();
+
+init();
+animate();
+
+function init() {
+  // Scene
+  scene = new THREE.Scene();
+
+  // Camera
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 5;
+
+  // Renderer
+  renderer = new THREE.WebGLRenderer({ canvas });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // GLTF Loader
+  loader = new GLTFLoader();
+
+  // Load models for each section
+  sections.forEach((section, index) => {
+    loader.load(`./models/${section}.glb`, (gltf) => {
+      const model = gltf.scene;
+      model.position.y = -index * window.innerHeight;
+      scene.add(model);
+      models[section] = model;
+
+      if (gltf.animations.length > 0) {
+        const mixer = new THREE.AnimationMixer(model);
+        const action = mixer.clipAction(gltf.animations[0]);
+        action.play();
+        mixers[section] = mixer;
+      }
+
+      if (Object.keys(models).length === sections.length) {
+        preloader.style.display = 'none';
+      }
+    }, undefined, (error) => {
+      console.error(error);
+    });
+  });
+
+  // Resize listener
+  window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Update mixers
+  const delta = clock.getDelta();
+  Object.values(mixers).forEach(mixer => mixer.update(delta));
+
+  // Scroll animation
+  document.body.onscroll = moveCamera;
+
+  renderer.render(scene, camera);
+}
+
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  camera.position.y = t * 0.01;
+
+  sections.forEach((section, index) => {
+    if (models[section]) {
+      models[section].rotation.y += 0.01;
+    }
+  });
+}
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/HorizontalBlurShader.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/VerticalBlurShader.js"></script>
+
+</body>
+</html>
