@@ -100,7 +100,16 @@
   </style>
 </head>
 <body>
-    <model-viewer src="room.glb" ar ar-scale="fixed" camera-controls touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2" skybox-image="environment.hdr" skybox-height="2m" max-camera-orbit="auto 90deg auto" ios-src="../../shared-assets/models/Astronaut.usdz" xr-environment></model-viewer>
-  
+    
+  <model-viewer src="room.glb" 
+                alt="360 Room"
+                ar ar-modes="webxr scene-viewer" scale="0.2 0.2 0.2" shadow-intensity="1" ar ar-scale="fixed" camera-controls touch-action="pan-y"
+                camera-controls 
+                auto-rotate
+                environment-image="environment.hdr"
+                field-of-view="90deg"
+                min-camera-orbit="auto auto 3m"
+                max-camera-orbit="auto auto 3m">
+  </model-viewer>
 </body>
 </html>
