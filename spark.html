@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>360 Room with model-viewer</title>
+  <style>
+     *  {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          width: 100%;
+          height: 100%;
+          background-color: #141212;
+          overflow-x: hidden;
+        }
+      
+        model-viewer {
+          width: 100%;
+          height: 100vh;
+          justify-content: center;
+          background-color: #000000;
+          overflow-x: hidden;
+        }
+      
+        #ar-button {
+          background-image: url(ic_view_in_ar_new_googblue_48dp.png);
+          background-repeat: no-repeat;
+          background-size: 20px 20px;
+          background-position: 12px 50%;
+          background-color: #fff;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          bottom: 132px;
+          padding: 0px 16px 0px 40px;
+          font-family: Roboto Regular, Helvetica Neue, sans-serif;
+          font-size: 14px;
+          color:#4285f4;
+          height: 36px;
+          line-height: 36px;
+          border-radius: 18px;
+          border: 1px solid #DADCE0;
+        }
+  </style>
+</head>
+<body>
+  <model-viewer src="room.glb" 
+                alt="360 Room"
+                camera-controls 
+                auto-rotate
+                environment-image="environment.hdr"
+                field-of-view="90deg"
+                min-camera-orbit="auto auto 3m"
+                max-camera-orbit="auto auto 3m">
+  </model-viewer>
+</body>
+</html>
