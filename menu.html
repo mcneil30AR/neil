@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Neil Glez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Outfit", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 400;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #2d0143;
+            z-index: 3;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            /* Elimina la decoración de texto */
+        }
+
+        .menu a:hover {
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            font-weight: bold;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /* Elementos en horizontal */
+        }
+
+        .nav-menu li {
+            padding: 5px 15px;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-menu a:hover {
+            color: #791179;
+            text-decoration: none;
+        }
+
+        .data_slider {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .title_slider {
+            margin: 0;
+            font-family: "Outfit", sans-serif;
+            font-size: 6rem;
+            line-height: 0.9;
+        }
+
+        .title_slider_span {
+            color: #791179;
+            margin: 0;
+            font-family: "Outfit", sans-serif;
+            font-size: 6rem;
+            line-height: 0.9;
+        }
+
+
+        .data_web {
+            display: flex;
+            position: absolute;
+            width: 350px;
+            font-size: 24px;
+            margin-top: auto;
+            color: #ffffff;
+            margin-bottom: auto;
+            padding: 0px 0px 0px 50px;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        .data_web p {
+            color: #C8ACD6;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-image: linear-gradient(45deg, #29003a, #a701a7);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            padding: 0px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0px;
+            border-radius: 7px;
+            display: none;
+        }
+
+        #scene-container-01,
+        #scene-container-02,
+        #scene-container-03 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #model-viewer-01,
+        #model-viewer-02,
+        #model-viewer-03 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 4;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #02 {
+            background-color: rgba(161, 163, 27, 0.8);
+        }
+
+        .mw {
+            display: flex;
+            width: 100%;
+            position: absolute;
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: flex-start;
+            justify-content: center;
+            align-content: center;
+            z-index: 3;
+        }
+
+        .wcn {
+            padding-top: 0.8rem;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+
+        /* Div donde se pondrá el video de fondo */
+        .video-background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Ocupa toda la altura de la pantalla */
+            overflow: hidden;
+        }
+
+        /* Video ocupando todo el div */
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            /* Envía el video al fondo */
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            body {
+                font-family: "Outfit", sans-serif;
+                font-size: 14px;
+                line-height: 1.5;
+                font-weight: 400;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f4f4f4;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 52px;
+                right: 0px;
+                background-color: #C8ACD697;
+                width: 200px;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: 20px;
+            }
+
+            .nav-menu.active {
+                display: block;
+                width: 100%;
+            }
+
+            .nav-menu ul {
+                display: flex;
+                flex-direction: column;
+                /* Elementos en vertical */
+            }
+
+            .nav-menu li {
+                padding: 10px;
+            }
+
+            .data_slider {
+                display: flex;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                align-items: flex-start;
+            }
+
+            .title_slider {
+                margin: 0;
+                font-family: "Outfit", sans-serif;
+                font-size: 2.5rem;
+                line-height: 0.9;
+            }
+
+            .title_slider_span {
+                color: #791179;
+                margin: 0;
+                font-family: "Outfit", sans-serif;
+                font-size: 2.5rem;
+                line-height: 0.9;
+            }
+
+
+            .data_web {
+                display: flex;
+                position: absolute;
+                width: 350px;
+                font-size: 18px;
+                margin-top: 68px;
+                color: #ffffff;
+                margin-bottom: auto;
+                padding: 0px 0px 0px 40px;
+                flex-direction: column;
+                z-index: 2;
+            }
+
+            .slider-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-image: linear-gradient(45deg, #29003a, #a701a7);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .slider {
+                display: flex;
+                padding: 0px;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .slide {
+                min-width: 100%;
+                box-sizing: border-box;
+                padding: 0px;
+                border-radius: 7px;
+                display: none;
+            }
+
+            #scene-container-01,
+            #scene-container-02,
+            #scene-container-03 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #model-viewer-01,
+            #model-viewer-02,
+            #model-viewer-03 {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 10px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 4;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            #02 {
+                background-color: rgba(161, 163, 27, 0.8);
+            }
+
+            .header {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .mw {
+                display: flex;
+                width: 100%;
+                position: absolute;
+                max-width: 1240px;
+                margin-left: auto;
+                margin-right: auto;
+                align-items: flex-start;
+                justify-content: center;
+                align-content: center;
+                z-index: 3;
+            }
+
+            .wcn {
+                padding-top: 0.8rem;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+            }
+
+            .link_menu {
+                display: inline-flex;
+                position: relative;
+                font-family: "Outfit", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                align-items: center;
+                text-decoration: none;
+                color: #ffffff;
+                margin: 0px 12px;
+            }
+
+            .link_menu a {
+                text-decoration: none;
+            }
+
+            .link_menu:hover {
+                color: #791179;
+                text-decoration: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Div donde se pondrá el video de fondo */
+            .video-background {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                /* Ocupa toda la altura de la pantalla */
+                overflow: hidden;
+            }
+
+            /* Video ocupando todo el div */
+            .video-background video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                /* Envía el video al fondo */
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Neil González Arriaga</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="portfolio.html">Home</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slider-container">
+        <div class="slider">
+
+            <div class="slide" id="01" style="background-image: linear-gradient(45deg, #000000, #1f1e1f);">
+                <div class="data_slider">
+                    <div class="data_web">
+                        <h1 class="title_slider">WEB <span class="title_slider_span">DEVELOPER</span></h1>
+                        <p>Productos Digitales Vivos</p>
+                    </div>
+                </div>
+                <div id="scene-container-01"></div>
+                <model-viewer id="model-viewer-01" src="web.glb" autoplay camera-controls></model-viewer>
+            </div>
+
+            <div class="slide" id="02" style="background-color: rgb(253, 207, 2);">
+                <div class="data_slider">
+                    <div class="data_web">
+                        <h1 class="title_slider">COMMUNITY <span class="title_slider_span">MANAGER</span></h1>
+                        <p>Presencia en redes</p>
+                    </div>
+                </div>
+                <div id="scene-container-02"></div>
+                <model-viewer id="model-viewer-02" src="model_03.glb" autoplay camera-controls></model-viewer>
+            </div>
+
+            <div class="slide" id="03" style="background-image: linear-gradient(45deg, #3a000d, #a70125);">
+                <div class="data_slider">
+                    <div class="data_web">
+                        <h1 class="title_slider">REALIDAD <span class="title_slider_span">AUMENTADA</span></h1>
+                        <p>Interacción</p>
+                    </div>
+                </div>
+                <div id="scene-container-03"></div>
+                <model-viewer id="model-viewer-03" src="raw.glb" autoplay tone-mapping="neutral" shadow-intensity="1" ar
+                    camera-controls touch-action="pan-y" camera-controls></model-viewer>
+            </div>
+
+            <div class="slide" id="04" style="background-image: linear-gradient(45deg, #3a000d, #a70125);">
+                <div class="video-background">
+                    <video autoplay muted loop>
+                        <source src="resumen.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                    <div class="data_slider">
+                        <div class="data_web">
+                            <h1 class="title_slider">MOTION <span class="title_slider_span">GRÁPHICS</span></h1>
+                            <p>2D / 3D</p>
+                        </div>
+                    </div>
+                    <div id="scene-container-04">
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/HorizontalBlurShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/VerticalBlurShader.js"></script>
+
+
+    <script>
+        let slideIndex = 0;
+        const models = ['bg01.glb', 'bg02.glb', 'bg03.glb'];
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            if (index >= slides.length) slideIndex = 0;
+            if (index < 0) slideIndex = slides.length - 1;
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[slideIndex].style.display = 'block';
+            loadModel(models[slideIndex], `scene-container-0${slideIndex + 1}`);
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(slideIndex);
+        });
+
+        function loadModel(modelPath, containerId) {
+            // Clear the previous scene
+            const container = document.getElementById(containerId);
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+
+            // Basic Three.js setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(0, 1, 0).normalize();
+            scene.add(directionalLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+
+            // Load GLTF model (for the scene)
+            const loader = new THREE.GLTFLoader();
+            loader.load(modelPath, function (gltf) {
+                scene.add(gltf.scene);
+
+                // Animation mixer
+                const mixer = new THREE.AnimationMixer(gltf.scene);
+                gltf.animations.forEach((clip) => {
+                    mixer.clipAction(clip).play();
+                });
+
+                // Animation loop
+                const clock = new THREE.Clock();
+                function animate() {
+                    requestAnimationFrame(animate);
+                    const delta = clock.getDelta();
+                    mixer.update(delta);
+                    composer.render();
+                }
+
+                animate();
+            });
+
+            // Position the camera
+            camera.position.z = 5;
+
+            // EffectComposer and passes
+            const composer = new THREE.EffectComposer(renderer);
+            const renderPass = new THREE.RenderPass(scene, camera);
+            composer.addPass(renderPass);
+
+            const hBlur = new THREE.ShaderPass(THREE.HorizontalBlurShader);
+            const vBlur = new THREE.ShaderPass(THREE.VerticalBlurShader);
+            hBlur.uniforms.h.value = 1.5 / window.innerWidth;
+            vBlur.uniforms.v.value = 1.5 / window.innerHeight;
+            composer.addPass(hBlur);
+            composer.addPass(vBlur);
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                composer.setSize(window.innerWidth, window.innerHeight);
+                hBlur.uniforms.h.value = 1 / window.innerWidth;
+                vBlur.uniforms.v.value = 1 / window.innerHeight;
+            });
+        }
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
