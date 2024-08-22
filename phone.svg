@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2673,-85)">
+        <g id="icons" transform="matrix(0.469334,0,0,0.510375,1418.12,41.1616)">
+            <rect x="2673.75" y="85.894" width="46.875" height="43.106" style="fill:none;"/>
+            <g id="phone-solid.svg" transform="matrix(0.0760064,0,0,0.0698944,2697.19,107.447)">
+                <g transform="matrix(1,0,0,1,-256,-256)">
+                    <clipPath id="_clip1">
+                        <rect x="0" y="0" width="512" height="512"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip1)">
+                        <path d="M164.9,24.6C157.2,6 136.9,-3.9 117.5,1.4L29.5,25.4C12.1,30.2 0,46 0,64C0,311.4 200.6,512 448,512C466,512 481.8,499.9 486.6,482.5L510.6,394.5C515.9,375.1 506,354.8 487.4,347.1L391.4,307.1C375.1,300.3 356.2,305 345.1,318.7L304.7,368C234.3,334.7 177.3,277.7 144,207.3L193.3,167C207,155.8 211.7,137 204.9,120.7L164.9,24.7L164.9,24.6Z" style="fill:rgb(50,26,52);fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

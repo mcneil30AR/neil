@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2673,-85)">
+        <g id="icons" transform="matrix(0.469334,0,0,0.510375,1418.12,41.1616)">
+            <rect x="2673.75" y="85.894" width="46.875" height="43.106" style="fill:none;"/>
+            <g id="envelope-solid.svg" transform="matrix(0.0760064,0,0,0.0698944,2697.19,107.447)">
+                <g transform="matrix(1,0,0,1,-256,-256)">
+                    <path d="M48,64C21.5,64 0,85.5 0,112C0,127.1 7.1,141.3 19.2,150.4L236.8,313.6C248.2,322.1 263.8,322.1 275.2,313.6L492.8,150.4C504.9,141.3 512,127.1 512,112C512,85.5 490.5,64 464,64L48,64ZM0,176L0,384C0,419.3 28.7,448 64,448L448,448C483.3,448 512,419.3 512,384L512,176L294.4,339.2C271.6,356.3 240.4,356.3 217.6,339.2L0,176Z" style="fill:rgb(50,26,52);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
