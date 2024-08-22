@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar campos (puedes hacer validaciones adicionales aquí)
     if (!empty($name) && !empty($phone) && !empty($email) && !empty($message)) {
         // Configuración del correo
-        $to = "estemporadademango@gmail.com, mcneil30@gmail.com"; // Cambia esto a tu dirección de correo
+        $to = "mcneil30@gmail.com"; // Cambia esto a tu dirección de correo
         $subject = "Mensaje desde portfolio";
         $body = "Nombre: $name\nTeléfono: $phone\nCorreo: $email\n\nMensaje:\n$message";
         $headers = "From: $email";
