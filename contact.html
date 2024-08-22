@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -17,6 +17,7 @@
         }
 
         body {
+
             font-family: "Outfit", sans-serif;
             font-size: 16px;
             line-height: 1.5;
@@ -25,7 +26,9 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-image: url(bg_ab_d.png);
             background-color: #f4f4f4;
+
         }
 
         .header {
@@ -290,6 +293,14 @@
             display: none;
         }
 
+        .center_form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 
 
         @media (max-width: 768px) {
@@ -304,6 +315,7 @@
                 height: 100vh;
                 margin: 0;
                 background-color: #f4f4f4;
+                background-image: none;
             }
 
             .logo {
@@ -462,6 +474,8 @@
                 align-content: center;
             }
 
+
+
             .desktop {
                 display: none;
             }
@@ -472,10 +486,59 @@
 
         }
 
+
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            top: 25px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            margin: 5px 0;
+            display: block;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 0px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b0446;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #3e0269;
+        }
     </style>
 </head>
 
 <body>
+
     <header class="header">
         <div class="logo">Neil González Arriaga</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -487,133 +550,24 @@
             </ul>
         </nav>
     </header>
+    <div class="center_form">
+        <form class="contact-form" action="process.php" method="POST">
+            <h2>Contáctanos</h2>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
 
-    <div class="about-container">
-        <div class="about_display">
-            <div class="column01">
-                <div class="data_about01">
-                    <model-viewer id="model-viewer-01" class="desktop" src="id.glb" autoplay scale="0.01 0.01 0.01"
-                        disable-zoom camera-target="0m 0m 0m"></model-viewer>
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-                    <model-viewer id="model-viewer-01" class="movil" src="id_movil.glb" autoplay scale="0.05 0.05 0.05"
-                        disable-zoom camera-target="0m 0m 0m"></model-viewer>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
 
-                    <h1 class="title_id">L.D.G.<span class="title_id_span"> Neil González Arriaga</span></h1>
-                    <p class="title_profil">WEB & 3D DESIGNER</p>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-                    <p class="profil">Licenciado en diseño gráfico con una sólida experiencia en diseño web y modelado
-                        3D, comprometido con la creación de productos que combinan una excelente usabilidad con
-                        funcionalidad óptima, centrándome en las necesidades de los usuarios.
-                    </p>
-
-                    <div class="contact_about">
-                        <div class="email_about">
-                            <div class="icon_about"><img class="icon_about" src="email.svg"></img></div> +52
-                            938-388-5351
-                        </div>
-                        <div class="phone_about">
-                            <div class="icon_about"><img class="icon_about" src="phone.svg"></img></div>
-                            mcneil30@gmail.com
-                        </div>
-                    </div>
-
-                    <div class="work_about">
-
-                        <div class="cont_fecha_about">
-                            <p class="fecha_about">2006</p>
-                        </div>
-
-                        <div class="employer_about">
-                            <img class="icon_employer" src="intergraf.png"></img>
-                        </div>
-                        <div class="employer_about">
-                            <img class="icon_employer" src="demar.png"></img>
-                        </div>
-                        <div class="employer_about">
-                            <img class="icon_employer" src="dmgp.png"></img>
-                        </div>
-                        <div class="employer_about">
-                            <img class="icon_employer" src="3digitallsolutions.png"></img>
-                        </div>
-                        <div class="employer_about">
-                            <img class="icon_employer" src="altera.png"></img>
-                        </div>
-                        <div class="employer_about">
-                            <img class="icon_employer" src="geoteco.png"></img>
-                        </div>
-
-                        <div class="cont_fecha_about">
-                            <p class="fecha_about">2024</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="column02">
-                <div class="data_about02">
-                    <p class="title_profil"><strong>Habilidades</strong></p>
-                    <p class="profil">
-                        Wireframing | Prototyping | High-fidelity designs | Basic web developer | industrial 3d modeling
-                    </p>
-                    <p class="title_profil"><strong>Softwares</strong></p>
-                    <p class="profil">
-                        Illustrator | Photoshop | After Effects | Figma | Spline | Framer | Webflow | Visual Studio |
-                        Blender
-                    </p>
-                    <p class="title_profil"><strong>Experiencia Laboral</strong></p>
-                    <p class="profil">
-                        <strong> Geoteco International 2020 - 2024 Tampico</strong><br>
-                        La oportunidad de entrar al mundo Ux me lo proporcionó la empresa Geoteco oil and gas services,
-                        ya que fuí la voz de la compañía al mundo y definir un tono al escribir contenido en redes
-                        sociales, en material interno, en videos de inducción y la planeación de flujo de aplicaciones
-                        internas y sus modificaciones anuales en busca de la mejora contínua.
-                        Logré implementar el uso de modelado de piezas en 3d de equipos petroleros para su fabricación y
-                        la búsqueda de su patente.
-                    </p>
-                    <p class="profil">
-                        <strong>Altera Design Club 2018 - 2020 Tampico</strong><br>
-                        En Altera Design Club tomé el rol de web developer, participando en la lluvia de ideas para la
-                        realización del diseño, la adaptación frontend - backend y la actualización de DNI´s de
-                        hostings.
-                        Tuve la oportunidad de hacer motion graphics en secciones de videos corporativos de Ibarra,
-                        Subodega, Mapping del aniversario de batalla de tampico, Informe de actividades alcalde de
-                        Ayuntamiento de Cd Valles.
-                    </p>
-                    <p class="profil">
-                        <strong>DMGP (Diavaz) 2014 - 2015 Cd. del Carmen</strong><br>
-                        Mi experiencia en animación y modelado me llevó a lograr un lugar como cadista Costa fuera dando
-                        soporte a Ingenieros Integradores y de campo, mi trabajo era generar presentaciones de avance, y
-                        dibujos de levantamiento, siendo parte de la embarcación Nor Valiant, Atlantic Challenger y
-                        Árbol grande.
-                    </p>
-                    <p class="profil">
-                        <strong>3Digitall Solutions 2013 - 2014 Cd. del Carmen</strong><br>
-                        Formé parte de la agencia de diseño 3digitallsolutions creando material multimedia para
-                        presentaciones ejecutivas, websites, digitalización de documentos y su indexación.
-                    </p>
-                    <p class="profil">
-                        <strong>Demar Instaladora y Constructora 2010 - 2013 Cd. del Carmen</strong><br>
-                        Demar confió en mí para crear presentaciones de arranque de proyectos, reportes de avances de
-                        construcción, animaciones 3d para atlas de riesgo, videos ejecutivos para captar inversionistas,
-                        edición de planos de ingeniería en autocad, animación y modelado de elementos a transportar e
-                        instalar costa afuera, soy parte del grupo que generó uno de los contratos más remunerados en
-                        cuanto a tendido e instalación de cable submarino.
-                    </p>
-                    <p class="profil">
-                        <strong>Intergraf Print center 2006 - 2009 Tampico</strong><br>
-                        Intergraf es la primera empresa donde inicia mi experiencia como diseñador, fue aquí donde
-                        aprendí el diseño web, la impresión en offset tradicional y digital, es donde todo comenzó y
-                        donde tuve la oportunidad de aprender de otros diseñadores y compañeros de otras disciplinas.
-                    </p>
-                </div>
-            </div>
-        </div>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
 
     <script>
         function toggleMenu() {
@@ -621,6 +575,7 @@
             menu.classList.toggle('active');
         }
     </script>
+    
 </body>
 
 </html>
