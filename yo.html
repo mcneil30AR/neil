@@ -155,17 +155,7 @@
             color: #C8ACD6;
         }
 
-        .about-container {
-            display: flex;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+
 
 
 
@@ -281,17 +271,11 @@
             font-size: 7px;
         }
 
-        .desktop {
-            display: block;
-        }
-
-        .movil {
-            display: none;
-        }
+ 
 
 
 
-        @media (max-width: 768px) {
+  
 
             body {
                 font-family: "Outfit", sans-serif;
@@ -469,7 +453,7 @@
                 display: block;
             }
 
-        }
+        
 
     </style>
 </head>
@@ -480,9 +464,6 @@
         <div class="about_display">
             <div class="column01">
                 <div class="data_about01">
-                    <model-viewer id="model-viewer-01" class="desktop" src="id.glb" autoplay scale="0.01 0.01 0.01"
-                        disable-zoom camera-target="0m 0m 0m"></model-viewer>
-
                     <model-viewer id="model-viewer-01" class="movil" src="id_movil.glb" autoplay scale="0.05 0.05 0.05"
                         disable-zoom camera-target="0m 0m 0m"></model-viewer>
 
