@@ -491,16 +491,10 @@
                 </div>
                 <div id="scene-container-01"></div>
                 <model-viewer id="model-viewer-01" class="desktop" src="web_desktop.glb" autoplay camera-controls>
-                    <div id="loader">
-                        <div id="progress-bar"></div>
-                        <div id="percentage">0%</div>
-                    </div>
+                    
                 </model-viewer>
                 <model-viewer id="model-viewer-01" class="movil" src="web_movil2.glb" autoplay camera-controls>
-                    <div id="loader">
-                        <div id="progress-bar"></div>
-                        <div id="percentage">0%</div>
-                    </div>
+                    
                 </model-viewer>
             </div>
 
@@ -666,26 +660,7 @@
         }
     </script>
 
-<script>
-const modelViewer = document.getElementById('model-viewer-01');
-const loader = document.getElementById('loader');
-const progressBar = document.getElementById('progress-bar').children[0];
-const percentage = document.getElementById('percentage');
 
-modelViewer.addEventListener('progress', (event) => {
-  const progress = event.detail.totalProgress;
-  progressBar.style.width = `${progress * 100}%`;
-  percentage.innerText = `${Math.floor(progress * 100)}%`;
-});
-
-modelViewer.addEventListener('load', () => {
-  loader.style.display = 'none';
-});
-
-modelViewer.addEventListener('error', () => {
-  loader.innerText = 'Failed to load the model';
-});
-</script>
 
 
 </body>
