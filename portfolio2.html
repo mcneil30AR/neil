@@ -169,6 +169,41 @@
                 display: none;
             }
 
+            #loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#progress-bar {
+  width: 80%;
+  height: 10px;
+  background-color: #ddd;
+}
+
+#progress-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background-color: #76c7c0;
+  width: 0%;
+}
+
+#percentage {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+
 
 
       
@@ -429,6 +464,10 @@
                     </div>
                 </div>
                 <div id="scene-container-01"></div>
+                <div id="loader">
+                    <div id="progress-bar"></div>
+                    <div id="percentage">0%</div>
+                  </div>
                 <model-viewer id="model-viewer-01" class="desktop" src="web_desktop.glb" autoplay camera-controls></model-viewer>
                 <model-viewer id="model-viewer-01" class="movil" src="web_movil2.glb" autoplay camera-controls></model-viewer>
             </div>
@@ -441,6 +480,10 @@
                     </div>
                 </div>
                 <div id="scene-container-02"></div>
+                <div id="loader">
+                    <div id="progress-bar"></div>
+                    <div id="percentage">0%</div>
+                  </div>
                 <model-viewer id="model-viewer-02" src="model_03.glb" autoplay camera-controls></model-viewer>
             </div>
 
@@ -452,6 +495,10 @@
                     </div>
                 </div>
                 <div id="scene-container-03"></div>
+                <div id="loader">
+                    <div id="progress-bar"></div>
+                    <div id="percentage">0%</div>
+                  </div>
                 <model-viewer id="model-viewer-03" src="raw.glb" autoplay tone-mapping="neutral" shadow-intensity="1" ar
                     camera-controls touch-action="pan-y" camera-controls></model-viewer>
             </div>
@@ -594,6 +641,27 @@
             menu.classList.toggle('active');
         }
     </script>
+
+<script>
+const modelViewer = document.getElementById('model-viewer');
+const loader = document.getElementById('loader');
+const progressBar = document.getElementById('progress-bar').children[0];
+const percentage = document.getElementById('percentage');
+
+modelViewer.addEventListener('progress', (event) => {
+  const progress = event.detail.totalProgress;
+  progressBar.style.width = `${progress * 100}%`;
+  percentage.innerText = `${Math.floor(progress * 100)}%`;
+});
+
+modelViewer.addEventListener('load', () => {
+  loader.style.display = 'none';
+});
+
+modelViewer.addEventListener('error', () => {
+  loader.innerText = 'Failed to load the model';
+});
+</script>
 
 </body>
 
