@@ -480,10 +480,6 @@
                     </div>
                 </div>
                 <div id="scene-container-02"></div>
-                <div id="loader">
-                    <div id="progress-bar"></div>
-                    <div id="percentage">0%</div>
-                  </div>
                 <model-viewer id="model-viewer-02" src="model_03.glb" autoplay camera-controls></model-viewer>
             </div>
 
@@ -495,10 +491,6 @@
                     </div>
                 </div>
                 <div id="scene-container-03"></div>
-                <div id="loader">
-                    <div id="progress-bar"></div>
-                    <div id="percentage">0%</div>
-                  </div>
                 <model-viewer id="model-viewer-03" src="raw.glb" autoplay tone-mapping="neutral" shadow-intensity="1" ar
                     camera-controls touch-action="pan-y" camera-controls></model-viewer>
             </div>
@@ -643,7 +635,7 @@
     </script>
 
 <script>
-const modelViewer = document.getElementById('model-viewer');
+const modelViewer = document.getElementById('model-viewer-01');
 const loader = document.getElementById('loader');
 const progressBar = document.getElementById('progress-bar').children[0];
 const percentage = document.getElementById('percentage');
