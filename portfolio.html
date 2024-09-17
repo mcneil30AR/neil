@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,8 @@
     <title>Portfolio | Neil Glez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,103 +17,411 @@
         }
 
         body {
-            font-family: "Outfit", sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            font-weight: 400;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            font-family: "Roboto Condensed", sans-serif;
+            background-color: #4C4C64;
         }
 
-        .header {
+        header {
             display: flex;
             position: absolute;
             width: 100%;
-            justify-content: space-around;
-            align-items: center;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #2d0143;
-            z-index: 3;
+            height: 65px;
+            margin: 0px auto;
+            z-index: 5;
+            align-content: center;
+            flex-direction: row;
+            justify-content: center;
         }
 
         .logo {
-            font-size: 24px;
-        }
-
-        .menu {
             display: flex;
-            gap: 15px;
+            position: relative;
+            width: 1000px;
+            height: 60px;
         }
 
-        .menu a {
-            color: #fff;
-            text-decoration: none;
-            /* Elimina la decoración de texto */
-        }
-
-        .menu a:hover {
-            text-decoration: none;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .nav-menu {
+        .logotipo {
             display: flex;
-            gap: 15px;
-            font-weight: bold;
+            position: relative;
+            width: 200px;
+            height: auto;
         }
 
-        .nav-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        main {
             display: flex;
-            /* Elementos en horizontal */
-        }
-
-        .nav-menu li {
-            padding: 5px 15px;
-        }
-
-        .nav-menu a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .nav-menu a:hover {
-            color: #3DC2EC;
-            text-decoration: none;
-        }
-
-        .data_slider {
-            display: flex;
-            position: absolute;
             width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            position: relative;
+            width: 1000px;
             height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            flex-direction: column;
+            overflow: hidden;
             align-items: center;
         }
 
-        .title_slider {
+        .title_content {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            margin: 60px 0px 0px 0px;
+            flex-direction: row;
+            line-height: normal;
+            align-items: center;
+        }
+
+        .title_section {
+            width: 143px;
+            margin: 0px 0px 0px 20px;
+        }
+
+        .title_media_section {
+            display: flex;
+            width: 250px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title_motion_content {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            margin: 60px 0px 0px 0px;
+            flex-direction: row;
+            line-height: normal;
+            align-items: center;
+        }
+
+        .title_motion_section {
+            width: 265px;
+            margin: 0px 0px 0px 20px;
+        }
+
+        .title_motion_media_section {
+            display: flex;
+            width: 250px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title_cm_content {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            margin: 60px 0px 0px 0px;
+            flex-direction: row;
+            line-height: normal;
+            align-items: center;
+        }
+
+        .title_cm_section {
+            width: 412px;
+            margin: 0px 0px 0px 20px;
+        }
+
+        .title_cm_media_section {
+            display: flex;
+            width: 194px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Community Manager */
+        .cm_content {
+            display: flex;
+            width: 960px;
+            justify-content: center;
+            margin: 20px auto;
+            padding: 0px 0px;
+            overflow: hidden;
+        }
+
+        .cm_wrapper {
+            display: flex;
+            width: 960px;
+            justify-content: center;
+            margin: 0px auto;
+            padding: 0px 0px;
+            overflow: hidden;
+        }
+
+        .cm_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 150px);
+            column-gap: 10px;
+        }
+
+        .img_post {
+            position: relative;
+            margin-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+            border-radius: 10px;
+        }
+
+        .cm_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .cm_glb {
+            display: flex;
+            width: 300px;
+            height: 410px;
+            margin: 0px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #model-viewer-01 {
+            display: block;
+            width: 100%;
+            height: inherit;
+            position: absolute;
+        }
+
+        h1 {
+            font-size: 78px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 45px;
+            font-weight: lighter;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1;
+        }
+
+        .wrapper_slider {
+            display: block;
+            position: relative;
+            width: 960px;
+            height: 565px;
+            margin: 0px auto;
+            overflow: hidden;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Contenedor del slider */
+        .slider_altera {
+            display: block;
+            position: relative;
+            width: 960px;
+            height: 565px;
+            margin: 0px auto;
+            overflow: hidden;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .slider_kmeisa {
+            display: none;
+            position: relative;
+            width: 960px;
+            height: 565px;
+            margin: 0px auto;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slider_tla {
+            display: none;
+            position: relative;
+            width: 960px;
+            height: 565px;
+            margin: 0px auto;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slider_freedom {
+            display: none;
+            position: relative;
+            width: 960px;
+            height: 565px;
+            margin: 0px auto;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+
+        /* Contenedor de las diapositivas */
+        .slides {
+            display: flex;
+            position: relative;
+            width: 100%;
+            transition: transform 1s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            transition: opacity 1s ease;
+        }
+
+        .slide_img {
+            width: 100%;
+        }
+
+
+        /* Flechas de navegación */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transform: translateY(-50%);
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 0px;
+        }
+
+        .next {
+            right: 0px;
+        }
+
+        .thumbs_slider {
+            display: flex;
+            bottom: 0%;
+            position: absolute;
+            flex-direction: row;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0px;
+            flex-wrap: wrap;
+            z-index: 3;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .thumbs {
+            display: flex;
+            width: 154px;
+            height: 88px;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        .btn_slider {
+            display: flex;
+            position: relative;
+            width: 154px;
+            height: 88px;
+            margin: 0px 15px;
+            border: 3px solid white;
+            border-radius: 20px;
+        }
+
+        .btn_slider.active {
+            border: 3px solid #00FFFF;
+            border-radius: 20px;
+        }
+
+        .slide_m_img {
+            display: none;
+        }
+
+        .video_web {
+            display: flex;
+            width: 960px;
+            justify-content: center;
+            margin: 0px auto;
+            padding: 0px 0px;
+            overflow: hidden;
+        }
+
+        .intro_web {
+            display: block;
+            width: 920px;
+            margin: 25px auto;
+            border-radius: 20px;
+        }
+
+        .web_descripcion {
+            display: flex;
+            width: 300px;
+            height: auto;
+            position: absolute;
+            justify-content: center;
+            text-align: justify;
+            align-items: center;
+            margin: 45px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #ffffff98;
+            box-shadow: 1px 1px 0.5px 0.2px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .title_id {
             margin: 0;
+            color: #3a3a3a;
             font-family: "Outfit", sans-serif;
-            font-size: 6rem;
+            font-size: 1rem;
+            font-weight: 400;
             line-height: 0.9;
         }
 
-        .title_slider_span {
-            color: #791179;
+        .title_id_span {
+            color: #000000;
             margin: 0;
             font-family: "Outfit", sans-serif;
-            font-size: 6rem;
+            font-size: 1rem;
+            font-weight: 600;
             line-height: 0.9;
+        }
+
+        .title_profil {
+            color: #000000;
+            margin: 3px 0px;
+            font-family: "Outfit", sans-serif;
+            font-size: 13px;
+            line-height: 0.9;
+        }
+
+        .profil {
+            color: #424242;
+            margin: 10px 0px;
+            font-family: "Outfit", sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: justify;
         }
 
 
@@ -133,195 +442,891 @@
             color: #C8ACD6;
         }
 
-        .slider-container {
+        .about-container {
+            display: flex;
             position: relative;
-            width: 100%;
+            width: 920px;
             height: 100%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
             overflow: hidden;
-            background-image: linear-gradient(45deg, #29003a, #a701a7);
+            border-radius: 15px;
+            background-image: url(bg_ab_d.png);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .slider {
+
+
+        .about_display {
             display: flex;
+            width: 100%;
+            height: 700px;
             padding: 0px;
+            margin: 12px auto;
+            border-radius: 16px;
+            background-color: #ffffff;
             transition: transform 0.5s ease-in-out;
         }
 
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
+        .column01 {
+            display: flex;
+            width: 30%;
+            height: auto;
             padding: 0px;
-            border-radius: 7px;
-            display: none;
+            margin: 0px;
+            transition: transform 0.5s ease-in-out;
         }
 
-        #scene-container-01,
-        #scene-container-02,
-        #scene-container-03 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .column02 {
+            display: flex;
+            width: 70%;
+            height: auto;
+            padding: 0px;
+            margin: 0px;
+            transition: transform 0.5s ease-in-out;
         }
 
-        #model-viewer-01,
-        #model-viewer-02,
-        #model-viewer-03 {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .prev,
-        .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 4;
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev:hover,
-        .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-
-        .mw {
+        .data_about01 {
             display: flex;
             width: 100%;
-            position: absolute;
-            max-width: 1240px;
-            margin-left: auto;
-            margin-right: auto;
-            align-items: flex-start;
-            justify-content: center;
+            margin: 16px 14px;
+            justify-content: flex-start;
+            background-color: #ffffff;
+            transition: transform 0.5s ease-in-out;
+            flex-direction: column;
+            flex-wrap: wrap;
             align-content: center;
-            z-index: 3;
+            align-items: center;
         }
 
-        .wcn {
-            padding-top: 0.8rem;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-
-
-        /* Div donde se pondrá el video de fondo */
-        .video-background {
-            position: relative;
+        .data_about02 {
+            display: flex;
             width: 100%;
-            height: 100vh;
-            /* Ocupa toda la altura de la pantalla */
-            overflow: hidden;
+            margin: 16px 14px;
+            justify-content: center;
+            background-color: #ffffff;
+            transition: transform 0.5s ease-in-out;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
         }
 
-        /* Video ocupando todo el div */
-        .video-background video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            /* Envía el video al fondo */
+        #model-viewer-02 {
+            position: relative;
+            width: 50%;
+        }
+
+        .contact_about {
+            display: flex;
+            width: 100%;
+            position: relative;
+            margin: 3px 0px 20px 0px;
+            flex-direction: column;
+            background-color: #ffffff;
+        }
+
+        .email_about {
+            display: flex;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .phone_about {
+            display: flex;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .icon_about {
+            display: block;
+            width: 18px;
+        }
+
+        .work_about {
+            display: flex;
+            width: 100%;
+            height: 28px;
+            position: relative;
+            margin: 0px;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .employer_about {
+            display: block;
+            width: 30px;
+            margin: 10px 1px;
+        }
+
+        .icon_employer {
+            display: block;
+            width: 30px;
+        }
+
+        .cont_fecha_about {
+            width: 25px;
+        }
+
+        .fecha_about {
+            font-size: 7px;
         }
 
         .desktop {
+            display: block;
+        }
+
+        .movil {
+            display: none;
+        }
+
+
+
+
+
+
+
+        /* Estilos para tablet */
+        @media (max-width: 980px) {
+            .wrapper {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            .title_section {
+                width: 132px;
+            }
+
+            .title_media_section {
+                display: flex;
+                width: 200px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* Community Manager */
+            .cm_content {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 20px auto;
+                padding: 0px 10px;
+                overflow: hidden;
+            }
+
+            .cm_wrapper {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 0px auto;
+                padding: 0px 10px;
+                overflow: hidden;
+                flex-direction: column-reverse;
+                flex-wrap: nowrap;
+                align-items: center;
+                align-content: center;
+            }
+
+            .cm_grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 150px);
+                column-gap: 10px;
+            }
+
+            .img_post {
+                position: relative;
+                margin-bottom: 10px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+                border-radius: 10px;
+            }
+
+            .cm_img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+
+            .cm_glb {
+                display: flex;
+                width: 300px;
+                height: 410px;
+                margin: 0px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #model-viewer-01 {
+                display: block;
+                width: 100%;
+                height: inherit;
+                position: absolute;
+            }
+
+            h1 {
+                font-size: 70px;
+                font-weight: bold;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            h2 {
+                font-size: 34px;
+                font-weight: lighter;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            h5 {
+                font-size: 14px;
+                font-weight: 300;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            .wrapper_slider {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px;
+                overflow: hidden;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            /* Contenedor del slider */
+            .slider_altera {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px;
+                overflow: hidden;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_kmeisa {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_tla {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_freedom {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .thumbs {
+                display: flex;
+                width: 77px;
+                height: 44px;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+
+            .btn_slider {
+                display: flex;
+                position: relative;
+                width: 77px;
+                height: 44px;
+                margin: 0px 10px;
+            }
+
+            .slide_m_img {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+            }
+
+            .slide_img {
                 display: block;
             }
+
+            .video_web {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 20px 0px;
+                padding: 0px 10px;
+                overflow: hidden;
+            }
+
+            .intro_web {
+                display: block;
+                width: 100%;
+                margin: 0px;
+                border-radius: 20px;
+            }
+
+            .web_descripcion {
+                display: flex;
+                width: 300px;
+                height: auto;
+                position: absolute;
+                justify-content: center;
+                text-align: justify;
+                align-items: center;
+                margin: 45px;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: #ffffff98;
+                box-shadow: 1px 1px 0.5px 0.2px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+            }
+
+            .title_id {
+                margin: 0;
+                color: #3a3a3a;
+                font-family: "Outfit", sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 0.9;
+            }
+
+            .title_id_span {
+                color: #000000;
+                margin: 0;
+                font-family: "Outfit", sans-serif;
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 0.9;
+            }
+
+            .title_profil {
+                color: #000000;
+                margin: 3px 0px;
+                font-family: "Outfit", sans-serif;
+                font-size: 13px;
+                line-height: 0.9;
+            }
+
+            .profil {
+                color: #424242;
+                margin: 10px 0px;
+                font-family: "Outfit", sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.2;
+                text-align: justify;
+            }
+
+
+            .data_web {
+                display: flex;
+                position: absolute;
+                width: 350px;
+                font-size: 24px;
+                margin-top: auto;
+                color: #ffffff;
+                margin-bottom: auto;
+                padding: 0px 0px 0px 50px;
+                flex-direction: column;
+                z-index: 2;
+            }
+
+            .data_web p {
+                color: #C8ACD6;
+            }
+
+            .about-container {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 0px 10px;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                overflow: hidden;
+                border-radius: 15px;
+                background-image: url(bg_ab_d.png);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+
+
+            .about_display {
+                display: flex;
+                width: 100%;
+                height: auto;
+                padding: 0px;
+                margin: 12px auto;
+                border-radius: 16px;
+                background-color: #ffffff;
+                transition: transform 0.5s ease-in-out;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: wrap;
+            }
+
+            .column01 {
+                display: flex;
+                width: 30%;
+                height: auto;
+                padding: 0px;
+                margin: 0px;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .column02 {
+                display: flex;
+                width: 70%;
+                height: auto;
+                padding: 0px;
+                margin: 0px;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .data_about01 {
+                display: flex;
+                width: 100%;
+                margin: 16px 14px;
+                justify-content: flex-start;
+                background-color: #ffffff;
+                transition: transform 0.5s ease-in-out;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: center;
+                align-items: center;
+            }
+
+            .data_about02 {
+                display: flex;
+                width: 100%;
+                margin: 16px 14px;
+                justify-content: center;
+                background-color: #ffffff;
+                transition: transform 0.5s ease-in-out;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: center;
+                align-items: center;
+            }
+
+            #model-viewer-02 {
+                position: relative;
+                width: 50%;
+            }
+
+            .contact_about {
+                display: flex;
+                width: 100%;
+                position: relative;
+                margin: 3px 0px 20px 0px;
+                flex-direction: column;
+                background-color: #ffffff;
+            }
+
+            .email_about {
+                display: flex;
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .phone_about {
+                display: flex;
+                width: 100%;
+                font-size: 13px;
+            }
+
+            .icon_about {
+                display: block;
+                width: 18px;
+            }
+
+            .work_about {
+                display: flex;
+                width: 100%;
+                height: 28px;
+                position: relative;
+                margin: 0px;
+                flex-direction: row;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .employer_about {
+                display: block;
+                width: 30px;
+                margin: 10px 1px;
+            }
+
+            .icon_employer {
+                display: block;
+                width: 30px;
+            }
+
+            .cont_fecha_about {
+                width: 25px;
+            }
+
+            .fecha_about {
+                font-size: 7px;
+            }
+
+            .desktop {
+                display: block;
+            }
+
             .movil {
                 display: none;
             }
 
 
 
-        @media (max-width: 768px) {
 
-            body {
-                font-family: "Outfit", sans-serif;
-                font-size: 14px;
-                line-height: 1.5;
-                font-weight: 400;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #f4f4f4;
-            }
+        }
 
-            .logo {
-                font-size: 18px;
-            }
 
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 52px;
-                right: 0px;
-                background-color: #C8ACD697;
-                width: 200px;
-            }
 
-            .menu-toggle {
-                display: block;
-                margin-left: 20px;
-            }
-
-            .nav-menu.active {
-                display: block;
-                width: 100%;
-            }
-
-            .nav-menu ul {
+        /* Estilos para móvil */
+        @media (max-width: 425px) {
+            .wrapper {
                 display: flex;
-                flex-direction: column;
-                /* Elementos en vertical */
-            }
-
-            .nav-menu li {
-                padding: 10px;
-            }
-
-            .data_slider {
-                display: flex;
-                position: absolute;
+                position: relative;
                 width: 100%;
                 height: 100%;
-                align-items: flex-start;
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                overflow: hidden;
             }
 
-            .title_slider {
+            .title_content {
+                display: flex;
+                width: 100%;
+                height: 70px;
+                margin: 60px 0px 50px 0px;
+                flex-direction: column;
+                line-height: normal;
+                align-items: center;
+            }
+
+            .title_section {
+                width: 265px;
+                margin: 0px 0px 0px 20px;
+            }
+
+            .title_media_section {
+                display: flex;
+                width: 250px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .title_motion_content {
+                display: flex;
+                width: 100%;
+                height: 70px;
+                margin: 60px 0px 50px 0px;
+                flex-direction: column;
+                line-height: normal;
+                align-items: center;
+            }
+
+            .title_motion_section {
+                width: 265px;
+                margin: 0px 0px 0px 20px;
+            }
+
+            .title_motion_media_section {
+                display: flex;
+                width: 250px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .title_cm_content {
+                display: flex;
+                width: 100%;
+                height: 70px;
+                margin: 60px 0px 50px 0px;
+                flex-direction: column;
+                line-height: normal;
+            }
+
+            .title_cm_section {
+                width: 265px;
+                margin: 0px 0px 0px 20px;
+            }
+
+            .title_cm_media_section {
+                display: flex;
+                width: 250px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* Community Manager */
+            .cm_content {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 20px auto;
+                padding: 0px 0px;
+                overflow: hidden;
+                flex-direction: column;
+            }
+
+            .cm_wrapper {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 0px auto;
+                padding: 0px 10px;
+                overflow: hidden;
+                flex-direction: column-reverse;
+                flex-wrap: nowrap;
+                align-items: center;
+                align-content: center;
+            }
+
+            .cm_grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 150px);
+                column-gap: 10px;
+            }
+
+            .img_post {
+                position: relative;
+                margin-bottom: 10px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+                border-radius: 10px;
+            }
+
+            .cm_img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+
+            .cm_glb {
+                display: flex;
+                width: 300px;
+                height: 410px;
+                margin: 0px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #model-viewer-01 {
+                display: block;
+                width: 100%;
+                height: inherit;
+                position: absolute;
+            }
+
+            h1 {
+                font-size: 50px;
+                font-weight: bold;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            h2 {
+                font-size: 34px;
+                font-weight: lighter;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            h5 {
+                font-size: 14px;
+                font-weight: 300;
+                color: #ffffff;
+                text-align: left;
+                line-height: 1;
+            }
+
+            .wrapper_slider {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px;
+                overflow: hidden;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            /* Contenedor del slider */
+            .slider_altera {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px;
+                overflow: hidden;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_kmeisa {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_tla {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .slider_freedom {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin: 0px auto;
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .thumbs {
+                display: flex;
+                width: 77px;
+                height: 44px;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+
+            .btn_slider {
+                display: flex;
+                position: relative;
+                width: 77px;
+                height: 44px;
+                margin: 0px 1px;
+                border: 1px solid white;
+                border-radius: 6px;
+            }
+
+            .btn_slider.active {
+                border: 1px solid #00FFFF;
+                border-radius: 6px;
+            }
+
+            .slide_m_img {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+            }
+
+            .slide_img {
+                display: none;
+            }
+
+            .video_web {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 20px 0px;
+                padding: 0px 10px;
+                overflow: hidden;
+            }
+
+            .intro_web {
+                display: block;
+                width: 100%;
+                margin: 0px;
+                border-radius: 20px;
+            }
+
+            .web_descripcion {
+                display: flex;
+                width: 284px;
+                height: auto;
+                position: absolute;
+                justify-content: center;
+                text-align: justify;
+                align-items: center;
+                margin: 20px 18px;
+                padding: 15px;
+                border-radius: 20px;
+                background-color: #ffffff98;
+                box-shadow: 1px 1px 0.5px 0.2px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+            }
+
+            .title_id {
                 margin: 0;
+                color: #313131;
                 font-family: "Outfit", sans-serif;
-                font-size: 2.5rem;
+                font-size: 0.9rem;
                 line-height: 0.9;
             }
 
-            .title_slider_span {
-                color: #791179;
+            .title_id_span {
+                color: #000000;
                 margin: 0;
                 font-family: "Outfit", sans-serif;
-                font-size: 2.5rem;
+                font-size: 0.9rem;
                 line-height: 0.9;
             }
 
@@ -339,72 +1344,79 @@
                 z-index: 2;
             }
 
-            .slider-container {
+            .about-container {
                 position: relative;
                 width: 100%;
                 height: 100%;
-                overflow: hidden;
-                background-image: linear-gradient(45deg, #29003a, #a701a7);
+                overflow: auto;
+                background-color: #ffffff;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
 
-            .slider {
+            .about_display {
                 display: flex;
+                position: relative;
                 padding: 0px;
+                top: 97px;
+                transition: transform 0.5s ease-in-out;
+                flex-wrap: nowrap;
+                overflow: auto;
+                flex-direction: column;
+            }
+
+            .column01 {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 0px;
+                margin: 0px;
                 transition: transform 0.5s ease-in-out;
             }
 
-            .slide {
-                min-width: 100%;
-                box-sizing: border-box;
+            .column02 {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: auto;
                 padding: 0px;
-                border-radius: 7px;
-                display: none;
+                margin: 0px;
+                transition: transform 0.5s ease-in-out;
             }
 
-            #scene-container-01,
-            #scene-container-02,
-            #scene-container-03 {
-                position: absolute;
-                top: 0;
-                left: 0;
+            .data_about01 {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 350px;
+                margin: 16px 14px;
+                background-color: #ffffff;
+                transition: transform 0.5s ease-in-out;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .data_about02 {
+                display: flex;
+                width: 100%;
+                margin: 16px 14px;
+                justify-content: center;
+                background-color: #ffffff;
+                transition: transform 0.5s ease-in-out;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: center;
+                align-items: center;
+            }
+
+
+            #model-viewer-02 {
+                position: relative;
                 width: 100%;
                 height: 100%;
-            }
-
-            #model-viewer-01,
-            #model-viewer-02,
-            #model-viewer-03 {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-            }
-
-            .prev,
-            .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                margin-top: -22px;
-                padding: 10px;
-                color: white;
-                font-weight: bold;
-                font-size: 18px;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 4;
-            }
-
-            .next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            .prev:hover,
-            .next:hover {
-                background-color: rgba(0, 0, 0, 0.8);
             }
 
             .header {
@@ -415,277 +1427,540 @@
                 align-content: center;
             }
 
-            .mw {
-                display: flex;
-                width: 100%;
-                position: absolute;
-                max-width: 1240px;
-                margin-left: auto;
-                margin-right: auto;
-                align-items: flex-start;
-                justify-content: center;
-                align-content: center;
-                z-index: 3;
-            }
-
-            .wcn {
-                padding-top: 0.8rem;
-                transition-property: all;
-                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                transition-duration: 150ms;
-            }
-
-            .link_menu {
-                display: inline-flex;
-                position: relative;
-                font-family: "Outfit", sans-serif;
-                font-size: 16px;
-                font-weight: 700;
-                align-items: center;
-                text-decoration: none;
-                color: #ffffff;
-                margin: 0px 12px;
-            }
-
-            .link_menu a {
-                text-decoration: none;
-            }
-
-            .link_menu:hover {
-                color: #791179;
-                text-decoration: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            /* Div donde se pondrá el video de fondo */
-            .video-background {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                /* Ocupa toda la altura de la pantalla */
-                overflow: hidden;
-            }
-
-            /* Video ocupando todo el div */
-            .video-background video {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                min-width: 100%;
-                min-height: 100%;
-                width: auto;
-                height: auto;
-                transform: translate(-50%, -50%);
-                z-index: 1;
-                /* Envía el video al fondo */
-            }
-
             .desktop {
                 display: none;
             }
+
             .movil {
                 display: block;
             }
 
-
         }
-
-
-
-
     </style>
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">Neil González Arriaga</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="portfolio.html">Home</a></li>
-                <li><a href="aboutme.html">About me</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="logo"><img class="logotipo" src="/neil.svg" alt="Neil González Arriaga"></div>
     </header>
-
-    <div class="slider-container">
-        <div class="slider">
-
-            <div class="slide" id="01" style="background-image: linear-gradient(45deg, #000000, #1f1e1f);">
-                <div class="data_slider">
-                    <div class="data_web">
-                        <h1 class="title_slider">WEB <span class="title_slider_span">DEVELOPER</span></h1>
-                        <p>Productos Digitales Vivos</p>
-                    </div>
+    <main>
+        <div class="wrapper">
+            <div class="title_content">
+                <div class="title_section">
+                    <h1>WEB</h1>
                 </div>
-                <div id="scene-container-01"></div>
-                <model-viewer id="model-viewer-01" class="desktop" src="web_desktop.glb" autoplay camera-controls></model-viewer>
-                <model-viewer id="model-viewer-01" class="movil" src="web_movil.glb" autoplay camera-controls></model-viewer>
+                <div class="title_media_section">
+                    <h2>DEVELOPER</h2>
+                    <h5>Productos digitales vivos</h5>
+                </div>
             </div>
 
-            <div class="slide" id="02" style="background-color: rgb(253, 207, 2);">
-                <div class="data_slider">
-                    <div class="data_web">
-                        <h1 class="title_slider">COMMUNITY <span class="title_slider_span">MANAGER</span></h1>
-                        <p>Presencia en redes</p>
+            <div class="wrapper_slider">
+                <!-- Slider Altera -->
+                <div id="slider_altera" class="slider_altera slider">
+                    <div class="web_descripcion">Me integré a la Agencia de Diseño Altera como Web Developer, donde
+                        dimos vida a proyectos generados en la agencia que era hora de mostrar como catálogo de
+                        servicios. El reto fue seleccionar y crear un espacio que luciera atractivo y juvenil, pero que
+                        también dejara en claro la experiencia de esta gran agencia tampiqueña.</div>
+                    <div class="slides">
+
+                        <div class="slide"><img class="slide_img" src="/banner_w.png" alt="Slide 1"><img
+                                class="slide_m_img" src="/slides_movil_w.png" alt="Slide 1"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_altera_01.png" alt="Slide 2"><img
+                                class="slide_m_img" src="/altera_movil_01.png" alt="Slide 2"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_altera_02.png" alt="Slide 3"><img
+                                class="slide_m_img" src="/altera_movil_02.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_altera_03.png" alt="Slide 4"><img
+                                class="slide_m_img" src="/altera_movil_03.png" alt="Slide 4"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_altera_04.png" alt="Slide 5"><img
+                                class="slide_m_img" src="/altera_movil_04.png" alt="Slide 5"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_altera_05.png" alt="Slide 6"><img
+                                class="slide_m_img" src="/altera_movil_05.png" alt="Slide 6"></div>
                     </div>
                 </div>
-                <div id="scene-container-02"></div>
-                <model-viewer id="model-viewer-02" src="model_03.glb" autoplay camera-controls></model-viewer>
-            </div>
 
-            <div class="slide" id="03" style="background-image: linear-gradient(45deg, #3a000d, #a70125);">
-                <div class="data_slider">
-                    <div class="data_web">
-                        <h1 class="title_slider">REALIDAD <span class="title_slider_span">AUMENTADA</span></h1>
-                        <p>Interacción</p>
+                <!-- Slider Kmeisa -->
+                <div id="slider_kmeisa" class="slider_kmeisa slider">
+                    <div class="web_descripcion">El sitio web de la empresa Kmeisa nos permitió trabajar en la
+                        plataforma Webflow y aprender sobre la marcha para ofrecer un cambio en la forma de generar
+                        páginas web más dinámicas.</div>
+                    <div class="slides">
+                        <div class="slide"><img class="slide_img" src="/slides_kmeisa_01.png" alt="Slide 1"><img
+                                class="slide_m_img" src="/kmeisa_movil_01.png" alt="Slide 1"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_kmeisa_02.png" alt="Slide 2"><img
+                                class="slide_m_img" src="/kmeisa_movil_02.png" alt="Slide 2"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_kmeisa_03.png" alt="Slide 3"><img
+                                class="slide_m_img" src="/kmeisa_movil_03.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_kmeisa_04.png" alt="Slide 4"><img
+                                class="slide_m_img" src="/kmeisa_movil_04.png" alt="Slide 4"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_kmeisa_05.png" alt="Slide 5"><img
+                                class="slide_m_img" src="/kmeisa_movil_05.png" alt="Slide 5"></div>
                     </div>
                 </div>
-                <div id="scene-container-03"></div>
-                <model-viewer id="model-viewer-03" src="raw.glb" autoplay tone-mapping="neutral" shadow-intensity="1" ar
-                    camera-controls touch-action="pan-y" camera-controls></model-viewer>
+
+                <!-- Slider Tla -->
+                <div id="slider_tla" class="slider_tla slider">
+                    <div class="web_descripcion">El reto de este proyecto fue generar una plantilla desde cero para
+                        WordPress. El cliente requería que fuera en esta plataforma y no deseaba una plantilla
+                        personalizada del mercado. Basándonos en el diseño de la agencia y utilizando programación en
+                        PHP, HTML, JavaScript y CSS, creamos esta propuesta a medida para la empresa TLA de Altamira.
+                    </div>
+                    <div class="slides">
+                        <div class="slide"><img class="slide_img" src="/slides_tla_01.png" alt="Slide 1"><img
+                                class="slide_m_img" src="/tla_movil_01.png" alt="Slide 1"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_tla_02.png" alt="Slide 2"><img
+                                class="slide_m_img" src="/tla_movil_02.png" alt="Slide 2"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_tla_03.png" alt="Slide 3"><img
+                                class="slide_m_img" src="/tla_movil_03.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_tla_04.png" alt="Slide 4"><img
+                                class="slide_m_img" src="/tla_movil_04.png" alt="Slide 4"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_tla_05.png" alt="Slide 5"><img
+                                class="slide_m_img" src="/tla_movil_05.png" alt="Slide 5"></div>
+                    </div>
+                </div>
+
+                <!-- Slider Freedom -->
+                <div id="slider_freedom" class="slider_freedom slider">
+                    <div class="web_descripcion">El proyecto del sitio web de Grupo Freedom es, sin duda, uno de mis
+                        favoritos, ya que explotamos la imaginación y las características de la plataforma Webflow y
+                        JavaScript para hacer realidad este diseño complejo pero divertido.</div>
+                    <div class="slides">
+                        <div class="slide"><img class="slide_img" src="/slides_freedom_01.png" alt="Slide 1"><img
+                                class="slide_m_img" src="/freedom_movil_01.png" alt="Slide 1"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_freedom_02.png" alt="Slide 2"><img
+                                class="slide_m_img" src="/freedom_movil_02.png" alt="Slide 2"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_freedom_03.png" alt="Slide 3"><img
+                                class="slide_m_img" src="/freedom_movil_03.png" alt="Slide 3"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_freedom_04.png" alt="Slide 4"><img
+                                class="slide_m_img" src="/freedom_movil_04.png" alt="Slide 4"></div>
+                        <div class="slide"><img class="slide_img" src="/slides_freedom_05.png" alt="Slide 5"><img
+                                class="slide_m_img" src="/freedom_movil_05.png" alt="Slide 5"></div>
+                    </div>
+                </div>
+
+                <!-- Botones de navegación -->
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+
+                <div class="thumbs_slider">
+                    <div class="thumbs">
+
+                        <picture>
+                            <img id="btn_altera" class="btn_slider active" alt="btn_slider_altera"
+                                src="/slide_btn_altera.png" loading="lazy" width="100" height="100">
+                        </picture>
+
+                        <picture>
+                            <img id="btn_kmeisa" class="btn_slider" alt="btn_slider_Kameisa" src="/slide_btn_kmeisa.png"
+                                loading="lazy" width="100" height="100">
+                        </picture>
+
+                        <picture>
+                            <img id="btn_tla" class="btn_slider" alt="btn_slider_Tla" src="/slide_btn_tla.png"
+                                loading="lazy" width="100" height="100">
+                        </picture>
+
+                        <picture>
+                            <img id="btn_freedom" class="btn_slider" alt="btn_slider_Freedom"
+                                src="/slide_btn_freedom.png" loading="lazy" width="100" height="100">
+                        </picture>
+
+
+                    </div>
+                </div>
             </div>
 
-            <div class="slide" id="04" style="background-image: linear-gradient(45deg, #3a000d, #a70125);">
-                <div class="video-background">
-                    <video autoplay muted loop>
-                        <source src="resumen.mp4" type="video/mp4">
-                        Tu navegador no soporta video.
-                    </video>
-                    <div class="data_slider">
-                        <div class="data_web">
-                            <h1 class="title_slider">MOTION <span class="title_slider_span">GRÁPHICS</span></h1>
-                            <p>2D / 3D</p>
+
+            <div class="title_motion_content">
+                <div class="title_motion_section">
+                    <h1>MOTION</h1>
+                </div>
+                <div class="title_motion_media_section">
+                    <h2>GRAPHICS</h2>
+                    <h5>2D / 3D</h5>
+                </div>
+            </div>
+
+            <!-- Animación -->
+            <div class="video_web">
+                <div class="web_descripcion">Reel personal animado en Blender con temática de diseño web.</div>
+                <video class="intro_web" controls>
+                    <source src="/intro.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+
+            </div>
+
+
+            <div class="video_web">
+                <div class="web_descripcion">Reel personal animado en Blender con varios trabajos realizados a inicios
+                    de 2024.</div>
+                <video class="intro_web" controls>
+                    <source src="/resumen.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+
+            </div>
+
+
+            <div class="title_cm_content">
+                <div class="title_cm_section">
+                    <h1>COMMUNITY</h1>
+                </div>
+                <div class="title_cm_media_section">
+                    <h2>MANAGER</h2>
+                    <h5>Presencia en redes</h5>
+                </div>
+            </div>
+
+            <div class="cm_content">
+                <div class="cm_wrapper">
+                    <div class="cm_grid">
+                        <div class="img_post">
+                            <img class="cm_img" src="/estamos_d_regreso-01.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/bichat.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/ludentips.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/somosgeoteco.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/eras.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/quim.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/dm.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/gen_idaco.jpg" loading="lazy" width="100" height="100">
+                        </div>
+                        <div class="img_post">
+                            <img class="cm_img" src="/plantas_e.jpg" loading="lazy" width="100" height="100">
                         </div>
                     </div>
-                    <div id="scene-container-04">
+                    <div class="cm_glb">
+                        <model-viewer id="model-viewer-01" src="/model_03.glb" autoplay camera-controls></model-viewer>
                     </div>
+                </div>
+            </div>
 
 
+            <div class="about-container">
+                <div class="about_display">
+                    <div class="column01">
+                        <div class="data_about01">
+                            <model-viewer id="model-viewer-02" class="desktop" src="id.glb" autoplay
+                                scale="0.01 0.01 0.01" disable-zoom camera-target="0m 0m 0m"></model-viewer>
+
+                            <model-viewer id="model-viewer-02" class="movil" src="id_movil.glb" autoplay
+                                scale="0.05 0.05 0.05" disable-zoom camera-target="0m 0m 0m"></model-viewer>
+
+                            <h1 class="title_id">L.D.G.<span class="title_id_span"> Neil González Arriaga</span></h1>
+                            <p class="title_profil">WEB & 3D DESIGNER</p>
+
+                            <p class="profil">Licenciado en diseño gráfico con una sólida experiencia en diseño web y
+                                modelado
+                                3D, comprometido con la creación de productos que combinan una excelente usabilidad con
+                                funcionalidad óptima, centrándome en las necesidades de los usuarios.
+                            </p>
+
+                            <div class="contact_about">
+                                <div class="email_about">
+                                    <div class="icon_about"><img class="icon_about" src="email.svg"></img></div> +52
+                                    938-388-5351
+                                </div>
+                                <div class="phone_about">
+                                    <div class="icon_about"><img class="icon_about" src="phone.svg"></img></div>
+                                    mcneil30@gmail.com
+                                </div>
+                            </div>
+
+                            <div class="work_about">
+
+                                <div class="cont_fecha_about">
+                                    <p class="fecha_about">2006</p>
+                                </div>
+
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="intergraf.png"></img>
+                                </div>
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="demar.png"></img>
+                                </div>
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="dmgp.png"></img>
+                                </div>
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="3digitallsolutions.png"></img>
+                                </div>
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="altera.png"></img>
+                                </div>
+                                <div class="employer_about">
+                                    <img class="icon_employer" src="geoteco.png"></img>
+                                </div>
+
+                                <div class="cont_fecha_about">
+                                    <p class="fecha_about">2024</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="column02">
+                        <div class="data_about02">
+                            <p class="title_profil"><strong>Habilidades</strong></p>
+                            <p class="profil">
+                                Wireframing | Prototyping | High-fidelity designs | Basic web developer | industrial 3d
+                                modeling
+                            </p>
+                            <p class="title_profil"><strong>Softwares</strong></p>
+                            <p class="profil">
+                                Illustrator | Photoshop | After Effects | Figma | Spline | Framer | Webflow | Visual
+                                Studio |
+                                Blender
+                            </p>
+                            <p class="title_profil"><strong>Experiencia Laboral</strong></p>
+                            <p class="profil">
+                                <strong> Geoteco International 2020 - 2024 Tampico</strong><br>
+                                La oportunidad de entrar al mundo Ux me lo proporcionó la empresa Geoteco oil and gas
+                                services,
+                                ya que fuí la voz de la compañía al mundo y definir un tono al escribir contenido en
+                                redes
+                                sociales, en material interno, en videos de inducción y la planeación de flujo de
+                                aplicaciones
+                                internas y sus modificaciones anuales en busca de la mejora contínua.
+                                Logré implementar el uso de modelado de piezas en 3d de equipos petroleros para su
+                                fabricación y
+                                la búsqueda de su patente.
+                            </p>
+                            <p class="profil">
+                                <strong>Altera Design Club 2018 - 2020 Tampico</strong><br>
+                                En Altera Design Club tomé el rol de web developer, participando en la lluvia de ideas
+                                para la
+                                realización del diseño, la adaptación frontend - backend y la actualización de DNI´s de
+                                hostings.
+                                Tuve la oportunidad de hacer motion graphics en secciones de videos corporativos de
+                                Ibarra,
+                                Subodega, Mapping del aniversario de batalla de tampico, Informe de actividades alcalde
+                                de
+                                Ayuntamiento de Cd Valles.
+                            </p>
+                            <p class="profil">
+                                <strong>DMGP (Diavaz) 2014 - 2015 Cd. del Carmen</strong><br>
+                                Mi experiencia en animación y modelado me llevó a lograr un lugar como cadista Costa
+                                fuera dando
+                                soporte a Ingenieros Integradores y de campo, mi trabajo era generar presentaciones de
+                                avance, y
+                                dibujos de levantamiento, siendo parte de la embarcación Nor Valiant, Atlantic
+                                Challenger y
+                                Árbol grande.
+                            </p>
+                            <p class="profil">
+                                <strong>3Digitall Solutions 2013 - 2014 Cd. del Carmen</strong><br>
+                                Formé parte de la agencia de diseño 3digitallsolutions creando material multimedia para
+                                presentaciones ejecutivas, websites, digitalización de documentos y su indexación.
+                            </p>
+                            <p class="profil">
+                                <strong>Demar Instaladora y Constructora 2010 - 2013 Cd. del Carmen</strong><br>
+                                Demar confió en mí para crear presentaciones de arranque de proyectos, reportes de
+                                avances de
+                                construcción, animaciones 3d para atlas de riesgo, videos ejecutivos para captar
+                                inversionistas,
+                                edición de planos de ingeniería en autocad, animación y modelado de elementos a
+                                transportar e
+                                instalar costa afuera, soy parte del grupo que generó uno de los contratos más
+                                remunerados en
+                                cuanto a tendido e instalación de cable submarino.
+                            </p>
+                            <p class="profil">
+                                <strong>Intergraf Print center 2006 - 2009 Tampico</strong><br>
+                                Intergraf es la primera empresa donde inicia mi experiencia como diseñador, fue aquí
+                                donde
+                                aprendí el diseño web, la impresión en offset tradicional y digital, es donde todo
+                                comenzó y
+                                donde tuve la oportunidad de aprender de otros diseñadores y compañeros de otras
+                                disciplinas.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+    </main>
 
+    <!-- JavaScript -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/HorizontalBlurShader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/VerticalBlurShader.js"></script>
-
 
     <script>
-        let slideIndex = 0;
-        const models = ['bg01.glb', 'bg02.glb', 'bg03.glb'];
+        // Obtener todos los elementos necesarios
+        const sliderAltera = document.getElementById('slider_altera');
+        const sliderKmeisa = document.getElementById('slider_kmeisa');
+        const sliderTla = document.getElementById('slider_tla');
+        const sliderFreedom = document.getElementById('slider_freedom');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentSlideAltera = 0;
+        let currentSlideKmeisa = 0;
+        let currentSlideTla = 0;
+        let currentSlideFreedom = 0;
+        let activeSlider = 'altera'; // Almacena el slider activo
+        let autoplayInterval; // Para guardar el intervalo del autoplay
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            if (index >= slides.length) slideIndex = 0;
-            if (index < 0) slideIndex = slides.length - 1;
-            slides.forEach(slide => slide.style.display = 'none');
-            slides[slideIndex].style.display = 'block';
-            loadModel(models[slideIndex], `scene-container-0${slideIndex + 1}`);
+        // Función para avanzar a la siguiente diapositiva
+        function nextSlide(slider, currentSlide) {
+            const slides = slider.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            return currentSlide;
         }
 
-        function moveSlide(n) {
-            showSlide(slideIndex += n);
+        // Función para retroceder a la diapositiva anterior
+        function prevSlide(slider, currentSlide) {
+            const slides = slider.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            return currentSlide;
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(slideIndex);
+        // Función de autoplay
+        function startAutoplay(slider, currentSlideVar) {
+            autoplayInterval = setInterval(() => {
+                if (activeSlider === 'altera') {
+                    currentSlideAltera = nextSlide(sliderAltera, currentSlideAltera);
+                } else if (activeSlider === 'kmeisa') {
+                    currentSlideKmeisa = nextSlide(sliderKmeisa, currentSlideKmeisa);
+                } else if (activeSlider === 'tla') {
+                    currentSlideTla = nextSlide(sliderTla, currentSlideTla);
+                } else if (activeSlider === 'freedom') {
+                    currentSlideFreedom = nextSlide(sliderFreedom, currentSlideFreedom);
+                }
+            }, 3000); // Cambia cada 3 segundos (ajústalo según sea necesario)
+        }
+
+        // Función para detener el autoplay
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // Función para actualizar los botones del slider
+        function updateActiveButton(buttonId) {
+            // Obtener todos los botones de slider
+            const buttons = document.querySelectorAll('.btn_slider');
+            // Quitar la clase active de todos los botones
+            buttons.forEach(button => button.classList.remove('active'));
+            // Añadir la clase active al botón seleccionado
+            const activeButton = document.getElementById(buttonId);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        // Manejo de eventos de clic para los botones de slider
+        document.getElementById('btn_altera').addEventListener('click', () => {
+            stopAutoplay();
+            sliderAltera.style.display = 'block';
+            sliderAltera.style.opacity = '1';
+            sliderKmeisa.style.display = 'none';
+            sliderKmeisa.style.opacity = '0';
+            sliderTla.style.display = 'none';
+            sliderTla.style.opacity = '0';
+            sliderFreedom.style.display = 'none';
+            sliderFreedom.style.opacity = '0';
+            activeSlider = 'altera';
+            updateActiveButton('btn_altera');
+            startAutoplay(sliderAltera, currentSlideAltera);
         });
 
-        function loadModel(modelPath, containerId) {
-            // Clear the previous scene
-            const container = document.getElementById(containerId);
-            while (container.firstChild) {
-                container.removeChild(container.firstChild);
+        document.getElementById('btn_kmeisa').addEventListener('click', () => {
+            stopAutoplay();
+            sliderAltera.style.display = 'none';
+            sliderAltera.style.opacity = '0';
+            sliderKmeisa.style.display = 'block';
+            sliderKmeisa.style.opacity = '1';
+            sliderTla.style.display = 'none';
+            sliderTla.style.opacity = '0';
+            sliderFreedom.style.display = 'none';
+            sliderFreedom.style.opacity = '0';
+            activeSlider = 'kmeisa';
+            updateActiveButton('btn_kmeisa');
+            startAutoplay(sliderKmeisa, currentSlideKmeisa);
+        });
+
+        document.getElementById('btn_tla').addEventListener('click', () => {
+            stopAutoplay();
+            sliderAltera.style.display = 'none';
+            sliderAltera.style.opacity = '0';
+            sliderKmeisa.style.display = 'none';
+            sliderKmeisa.style.opacity = '0';
+            sliderTla.style.display = 'block';
+            sliderTla.style.opacity = '1';
+            sliderFreedom.style.display = 'none';
+            sliderFreedom.style.opacity = '0';
+            activeSlider = 'tla';
+            updateActiveButton('btn_tla');
+            startAutoplay(sliderTla, currentSlideTla);
+        });
+
+        document.getElementById('btn_freedom').addEventListener('click', () => {
+            stopAutoplay();
+            sliderAltera.style.display = 'none';
+            sliderAltera.style.opacity = '0';
+            sliderKmeisa.style.display = 'none';
+            sliderKmeisa.style.opacity = '0';
+            sliderTla.style.display = 'none';
+            sliderTla.style.opacity = '0';
+            sliderFreedom.style.display = 'block';
+            sliderFreedom.style.opacity = '1';
+            activeSlider = 'freedom';
+            updateActiveButton('btn_freedom');
+            startAutoplay(sliderFreedom, currentSlideFreedom);
+        });
+
+        // Botones de navegación (anterior y siguiente)
+        nextButton.addEventListener('click', () => {
+            stopAutoplay();
+            if (activeSlider === 'altera') {
+                currentSlideAltera = nextSlide(sliderAltera, currentSlideAltera);
+            } else if (activeSlider === 'kmeisa') {
+                currentSlideKmeisa = nextSlide(sliderKmeisa, currentSlideKmeisa);
+            } else if (activeSlider === 'tla') {
+                currentSlideTla = nextSlide(sliderTla, currentSlideTla);
+            } else if (activeSlider === 'freedom') {
+                currentSlideFreedom = nextSlide(sliderFreedom, currentSlideFreedom);
             }
+            startAutoplay(); // Reiniciar autoplay después de la interacción
+        });
 
-            // Basic Three.js setup
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            container.appendChild(renderer.domElement);
+        prevButton.addEventListener('click', () => {
+            stopAutoplay();
+            if (activeSlider === 'altera') {
+                currentSlideAltera = prevSlide(sliderAltera, currentSlideAltera);
+            } else if (activeSlider === 'kmeisa') {
+                currentSlideKmeisa = prevSlide(sliderKmeisa, currentSlideKmeisa);
+            } else if (activeSlider === 'tla') {
+                currentSlideTla = prevSlide(sliderTla, currentSlideTla);
+            } else if (activeSlider === 'freedom') {
+                currentSlideFreedom = prevSlide(sliderFreedom, currentSlideFreedom);
+            }
+            startAutoplay(); // Reiniciar autoplay después de la interacción
+        });
 
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-            scene.add(ambientLight);
+        // Inicializar autoplay al cargar la página
+        startAutoplay(sliderAltera, currentSlideAltera);
 
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-            directionalLight.position.set(0, 1, 0).normalize();
-            scene.add(directionalLight);
 
-            const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-            pointLight.position.set(10, 10, 10);
-            scene.add(pointLight);
-
-            // Load GLTF model (for the scene)
-            const loader = new THREE.GLTFLoader();
-            loader.load(modelPath, function (gltf) {
-                scene.add(gltf.scene);
-
-                // Animation mixer
-                const mixer = new THREE.AnimationMixer(gltf.scene);
-                gltf.animations.forEach((clip) => {
-                    mixer.clipAction(clip).play();
-                });
-
-                // Animation loop
-                const clock = new THREE.Clock();
-                function animate() {
-                    requestAnimationFrame(animate);
-                    const delta = clock.getDelta();
-                    mixer.update(delta);
-                    composer.render();
-                }
-
-                animate();
-            });
-
-            // Position the camera
-            camera.position.z = 5;
-
-            // EffectComposer and passes
-            const composer = new THREE.EffectComposer(renderer);
-            const renderPass = new THREE.RenderPass(scene, camera);
-            composer.addPass(renderPass);
-
-            const hBlur = new THREE.ShaderPass(THREE.HorizontalBlurShader);
-            const vBlur = new THREE.ShaderPass(THREE.VerticalBlurShader);
-            hBlur.uniforms.h.value = 1.5 / window.innerWidth;
-            vBlur.uniforms.v.value = 1.5 / window.innerHeight;
-            composer.addPass(hBlur);
-            composer.addPass(vBlur);
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                composer.setSize(window.innerWidth, window.innerHeight);
-                hBlur.uniforms.h.value = 1 / window.innerWidth;
-                vBlur.uniforms.v.value = 1 / window.innerHeight;
-            });
-        }
-    </script>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
     </script>
 
 </body>

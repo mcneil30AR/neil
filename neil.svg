@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 80 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Artboard1" transform="matrix(1,0,0,1,-11.4226,-10.0787)">
+        <rect x="11.423" y="10.079" width="79.958" height="27.549" style="fill:none;"/>
+        <g id="Layer-1" serif:id="Layer 1" transform="matrix(1,0,0,1,0.46107,-0.0950349)">
+            <g transform="matrix(1,0,0,1,-6.71916,-172.01)">
+                <g transform="matrix(1.02614,0,0,1,-0.70467,0)">
+                    <text x="26.956px" y="200.998px" style="font-family:'Netron';font-size:13.702px;fill:white;">Neil</text>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-6.71916,-172.01)">
+                <text x="55.977px" y="194.423px" style="font-family:'Netron';font-size:4.921px;fill:white;">Gonzalez</text>
+            </g>
+            <g transform="matrix(1,0,0,1,-6.71916,-172.01)">
+                <text x="55.893px" y="198.91px" style="font-family:'Netron';font-size:4.921px;fill:white;">arri<tspan x="68.756px 72.51px 76.265px " y="198.91px 198.91px 198.91px ">aga</tspan></text>
+            </g>
+        </g>
+    </g>
+</svg>
