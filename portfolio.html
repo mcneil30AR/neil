@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Neil Glez | Desarrollador Web con experiencia en JavaScript, THREE.js, y diseño web interactivo.">
-    <meta name="keywords" content="Neil Glez, desarrollador web, JavaScript, THREE.js, diseño web, proyectos interactivos, portfolio">
+    <meta name="description"
+        content="Neil Glez | Desarrollador Web con experiencia en JavaScript, THREE.js, y diseño web interactivo.">
+    <meta name="keywords"
+        content="Neil Glez, desarrollador web, JavaScript, THREE.js, diseño web, proyectos interactivos, portfolio">
     <meta name="author" content="Neil Glez">
     <meta property="og:title" content="Neil Glez | Desarrollador Web">
-<meta property="og:description" content="Portfolio de Neil Glez, desarrollador especializado en JavaScript, proyectos interactivos, y diseño 3D.">
-<meta property="og:url" content="https://mcneil30ar.github.io/neil/portfolio.html">
+    <meta property="og:description"
+        content="Portfolio de Neil Glez, desarrollador especializado en JavaScript, proyectos interactivos, y diseño 3D.">
+    <meta property="og:url" content="https://mcneil30ar.github.io/neil/portfolio.html">
     <title>Portfolio | Neil Glez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +55,30 @@
             width: 200px;
             height: auto;
         }
+
+        .fade-brand {
+            opacity: 0;
+            /* Empieza invisible */
+            transform: translateY(6px);
+            /* Empieza 20px abajo */
+            animation: fadeDown 1s forwards;
+            /* Aplica la animación al cargar */
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(0);
+                /* Posición inicial */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(6px);
+                /* Posición final */
+            }
+        }
+
 
         main {
             display: flex;
@@ -127,13 +154,13 @@
         }
 
         .title_cm_section {
-            width: 412px;
+            width: 315px;
             margin: 0px 0px 0px 20px;
         }
 
         .title_cm_media_section {
             display: flex;
-            width: 194px;
+            width: 284px;
             flex-direction: column;
             justify-content: center;
         }
@@ -358,6 +385,39 @@
             border-radius: 20px;
         }
 
+        .fade-button {
+            opacity: 0;
+            /* Empieza invisible */
+            transform: translateY(20px);
+            /* Empieza 20px abajo */
+            animation: fadeUp 1.2s forwards;
+            animation-delay: 1.8s;
+            /* Aplica la animación al cargar */
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* Posición inicial */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                /* Posición final */
+            }
+        }
+
+        /* Si deseas escalonar la animación de cada botón */
+        .fade-button:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .fade-button:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
         .slide_m_img {
             display: none;
         }
@@ -392,6 +452,30 @@
             background-color: #ffffff98;
             box-shadow: 1px 1px 0.5px 0.2px rgba(0, 0, 0, 0.1);
             z-index: 1;
+        }
+
+        .fade-descripcion {
+            opacity: 0;
+            /* Empieza invisible */
+            transform: translateX(-20px);
+            /* Empieza 20px a la izquierda */
+            animation: fadeRight 0.8s forwards;
+            animation-delay: 1.2s;
+            /* Aplica la animación al cargar */
+        }
+
+        @keyframes fadeRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+                /* Posición inicial desde la izquierda */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                /* Posición final */
+            }
         }
 
         .title_id {
@@ -1048,15 +1132,15 @@
                 display: flex;
                 width: 100%;
                 height: 70px;
-                margin: 60px 0px 50px 0px;
+                margin: 60px 0px 50px 60px;
                 flex-direction: column;
                 line-height: normal;
-                align-items: center;
+                align-items: flex-start;
             }
 
             .title_section {
                 width: 265px;
-                margin: 0px 0px 0px 20px;
+                margin: 0px 0px 0px 0px;
             }
 
             .title_media_section {
@@ -1070,15 +1154,15 @@
                 display: flex;
                 width: 100%;
                 height: 70px;
-                margin: 60px 0px 50px 0px;
+                margin: 60px 0px 50px 60px;
                 flex-direction: column;
                 line-height: normal;
-                align-items: center;
+                align-items: flex-start;
             }
 
             .title_motion_section {
                 width: 265px;
-                margin: 0px 0px 0px 20px;
+                margin: 0px 0px 0px 0px;
             }
 
             .title_motion_media_section {
@@ -1092,14 +1176,15 @@
                 display: flex;
                 width: 100%;
                 height: 70px;
-                margin: 60px 0px 50px 0px;
+                margin: 60px 0px 50px 60px;
                 flex-direction: column;
                 line-height: normal;
+                align-items: flex-start;
             }
 
             .title_cm_section {
                 width: 265px;
-                margin: 0px 0px 0px 20px;
+                margin: 0px 0px 0px 0px;
             }
 
             .title_cm_media_section {
@@ -1306,7 +1391,7 @@
 
             .web_descripcion {
                 display: flex;
-                width: 284px;
+                width: 90%;
                 height: auto;
                 position: absolute;
                 justify-content: center;
@@ -1447,7 +1532,7 @@
 
 <body>
     <header>
-        <div class="logo"><img class="logotipo" src="neil.svg" alt="Neil González Arriaga"></div>
+        <div class="logo"><img class="logotipo fade-brand" src="neil.svg" alt="Neil González Arriaga"></div>
     </header>
     <main>
         <div class="wrapper">
@@ -1464,7 +1549,7 @@
             <div class="wrapper_slider">
                 <!-- Slider Altera -->
                 <div id="slider_altera" class="slider_altera slider">
-                    <div class="web_descripcion">Me integré a la Agencia de Diseño Altera como Web Developer, donde
+                    <div class="web_descripcion fade-descripcion">Me integré a la Agencia de Diseño Altera como Web Developer, donde
                         dimos vida a proyectos generados en la agencia que era hora de mostrar como catálogo de
                         servicios. El reto fue seleccionar y crear un espacio que luciera atractivo y juvenil, pero que
                         también dejara en claro la experiencia de esta gran agencia tampiqueña.</div>
@@ -1487,7 +1572,7 @@
 
                 <!-- Slider Kmeisa -->
                 <div id="slider_kmeisa" class="slider_kmeisa slider">
-                    <div class="web_descripcion">El sitio web de la empresa Kmeisa nos permitió trabajar en la
+                    <div class="web_descripcion fade-descripcion">El sitio web de la empresa Kmeisa nos permitió trabajar en la
                         plataforma Webflow y aprender sobre la marcha para ofrecer un cambio en la forma de generar
                         páginas web más dinámicas.</div>
                     <div class="slides">
@@ -1506,7 +1591,7 @@
 
                 <!-- Slider Tla -->
                 <div id="slider_tla" class="slider_tla slider">
-                    <div class="web_descripcion">El reto de este proyecto fue generar una plantilla desde cero para
+                    <div class="web_descripcion fade-descripcion">El reto de este proyecto fue generar una plantilla desde cero para
                         WordPress. El cliente requería que fuera en esta plataforma y no deseaba una plantilla
                         personalizada del mercado. Basándonos en el diseño de la agencia y utilizando programación en
                         PHP, HTML, JavaScript y CSS, creamos esta propuesta a medida para la empresa TLA de Altamira.
@@ -1527,7 +1612,7 @@
 
                 <!-- Slider Freedom -->
                 <div id="slider_freedom" class="slider_freedom slider">
-                    <div class="web_descripcion">El proyecto del sitio web de Grupo Freedom es, sin duda, uno de mis
+                    <div class="web_descripcion fade-descripcion">El proyecto del sitio web de Grupo Freedom es, sin duda, uno de mis
                         favoritos, ya que explotamos la imaginación y las características de la plataforma Webflow y
                         JavaScript para hacer realidad este diseño complejo pero divertido.</div>
                     <div class="slides">
@@ -1552,22 +1637,22 @@
                     <div class="thumbs">
 
                         <picture>
-                            <img id="btn_altera" class="btn_slider active" alt="btn_slider_altera"
+                            <img id="btn_altera" class="btn_slider fade-button active" alt="btn_slider_altera"
                                 src="slide_btn_altera.png" loading="lazy" width="100" height="100">
                         </picture>
 
                         <picture>
-                            <img id="btn_kmeisa" class="btn_slider" alt="btn_slider_Kameisa" src="slide_btn_kmeisa.png"
-                                loading="lazy" width="100" height="100">
+                            <img id="btn_kmeisa" class="btn_slider fade-button" alt="btn_slider_Kameisa"
+                                src="slide_btn_kmeisa.png" loading="lazy" width="100" height="100">
                         </picture>
 
                         <picture>
-                            <img id="btn_tla" class="btn_slider" alt="btn_slider_Tla" src="slide_btn_tla.png"
-                                loading="lazy" width="100" height="100">
+                            <img id="btn_tla" class="btn_slider fade-button" alt="btn_slider_Tla"
+                                src="slide_btn_tla.png" loading="lazy" width="100" height="100">
                         </picture>
 
                         <picture>
-                            <img id="btn_freedom" class="btn_slider" alt="btn_slider_Freedom"
+                            <img id="btn_freedom" class="btn_slider fade-button" alt="btn_slider_Freedom"
                                 src="slide_btn_freedom.png" loading="lazy" width="100" height="100">
                         </picture>
 
@@ -1611,10 +1696,10 @@
 
             <div class="title_cm_content">
                 <div class="title_cm_section">
-                    <h1>COMMUNITY</h1>
+                    <h1>CREADOR</h1>
                 </div>
                 <div class="title_cm_media_section">
-                    <h2>MANAGER</h2>
+                    <h2>DE CONTENIDO</h2>
                     <h5>Presencia en redes</h5>
                 </div>
             </div>
