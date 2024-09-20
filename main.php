@@ -1,4 +1,5 @@
 <main>
+        <div class="wrapper_circlelife"><img class="circlelife" src="circlelife.svg" alt="circlelife"></div>
         <div class="wrapper">
             <div class="title_content">
                 <div class="title_section">
@@ -149,7 +150,7 @@
                 </video>
 
             </div>
-
+            <div class="wrapper_circlelife"><img class="circlelife" src="circlelife.svg" alt="circlelife"></div>
 
             <div class="video_web">
                 <div class="web_descripcion">Reel personal animado en Blender con varios trabajos realizados a inicios
@@ -173,6 +174,7 @@
             </div>
 
             <div class="cm_content">
+                
                 <div class="cm_wrapper">
                     <div class="cm_grid">
                         <div class="img_post">
@@ -208,9 +210,10 @@
                     </div>
                 </div>
             </div>
-
+            
 
             <div class="about-container">
+                
                 <div class="about_display">
                     <div class="column01">
                         <div class="data_about01">
