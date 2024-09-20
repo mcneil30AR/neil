@@ -27,8 +27,38 @@
 
         body {
             font-family: "Roboto Condensed", sans-serif;
-            background-color: #4C4C64;
         }
+
+        /* Degradado main */
+        .animated-gradient {
+            width: 100%;
+            height: 100%;
+            /* Altura de la pantalla completa */
+            background: linear-gradient(45deg, #62527b, #2e2e3e);
+            /* Degradado inicial */
+            background-size: 200% 200%;
+            /* Duplicamos el tamaño para la animación */
+            animation: gradientAnimation 5s infinite alternate;
+            /* Animación de 5s que se repite infinitamente */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+                /* Posición inicial */
+            }
+
+            50% {
+                background-position: 100% 50%;
+                /* Degradado se mueve horizontalmente */
+            }
+
+            100% {
+                background-position: 0% 50%;
+                /* Vuelve a la posición inicial */
+            }
+        }
+
 
         header {
             display: flex;
@@ -383,9 +413,9 @@
         .btn_slider.active {
             border: 3px solid #00FFFF;
             border-radius: 20px;
-            box-shadow: 0 0 1px #00FFFF, 
-              0 0 1.2px #00FFFF, 
-              0 0 1.5px #00FFFF;
+            box-shadow: 0 0 1px #00FFFF,
+                0 0 1.2px #00FFFF,
+                0 0 1.5px #00FFFF;
         }
 
         .fade-button {
@@ -1362,9 +1392,9 @@
             .btn_slider.active {
                 border: 1.5px solid #00FFFF;
                 border-radius: 6px;
-                box-shadow: 0 0 1px #00FFFF, 
-              0 0 1.1px #00FFFF, 
-              0 0 1.2px #00FFFF;
+                box-shadow: 0 0 1px #00FFFF,
+                    0 0 1.1px #00FFFF,
+                    0 0 1.2px #00FFFF;
             }
 
             .slide_m_img {
@@ -1446,7 +1476,7 @@
                 width: 100%;
                 height: 100%;
                 overflow: auto;
-                background-color: #ffffff;
+                /*background-color: #ffffff;*/
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
 
@@ -1454,7 +1484,7 @@
                 display: flex;
                 position: relative;
                 padding: 0px;
-                top: 97px;
+                /*top: 97px;*/
                 transition: transform 0.5s ease-in-out;
                 flex-wrap: nowrap;
                 overflow: auto;
@@ -1536,7 +1566,7 @@
     </style>
 </head>
 
-<body>
+<body class="animated-gradient">
     <header>
         <div class="logo"><img class="logotipo fade-brand" src="neil.svg" alt="Neil González Arriaga"></div>
     </header>
@@ -1555,7 +1585,8 @@
             <div class="wrapper_slider">
                 <!-- Slider Altera -->
                 <div id="slider_altera" class="slider_altera slider">
-                    <div class="web_descripcion fade-descripcion">Me integré a la Agencia de Diseño Altera como Web Developer, donde
+                    <div class="web_descripcion fade-descripcion">Me integré a la Agencia de Diseño Altera como Web
+                        Developer, donde
                         dimos vida a proyectos generados en la agencia que era hora de mostrar como catálogo de
                         servicios. El reto fue seleccionar y crear un espacio que luciera atractivo y juvenil, pero que
                         también dejara en claro la experiencia de esta gran agencia tampiqueña.</div>
@@ -1578,7 +1609,8 @@
 
                 <!-- Slider Kmeisa -->
                 <div id="slider_kmeisa" class="slider_kmeisa slider">
-                    <div class="web_descripcion fade-descripcion">El sitio web de la empresa Kmeisa nos permitió trabajar en la
+                    <div class="web_descripcion fade-descripcion">El sitio web de la empresa Kmeisa nos permitió
+                        trabajar en la
                         plataforma Webflow y aprender sobre la marcha para ofrecer un cambio en la forma de generar
                         páginas web más dinámicas.</div>
                     <div class="slides">
@@ -1597,7 +1629,8 @@
 
                 <!-- Slider Tla -->
                 <div id="slider_tla" class="slider_tla slider">
-                    <div class="web_descripcion fade-descripcion">El reto de este proyecto fue generar una plantilla desde cero para
+                    <div class="web_descripcion fade-descripcion">El reto de este proyecto fue generar una plantilla
+                        desde cero para
                         WordPress. El cliente requería que fuera en esta plataforma y no deseaba una plantilla
                         personalizada del mercado. Basándonos en el diseño de la agencia y utilizando programación en
                         PHP, HTML, JavaScript y CSS, creamos esta propuesta a medida para la empresa TLA de Altamira.
@@ -1618,7 +1651,8 @@
 
                 <!-- Slider Freedom -->
                 <div id="slider_freedom" class="slider_freedom slider">
-                    <div class="web_descripcion fade-descripcion">El proyecto del sitio web de Grupo Freedom es, sin duda, uno de mis
+                    <div class="web_descripcion fade-descripcion">El proyecto del sitio web de Grupo Freedom es, sin
+                        duda, uno de mis
                         favoritos, ya que explotamos la imaginación y las características de la plataforma Webflow y
                         JavaScript para hacer realidad este diseño complejo pero divertido.</div>
                     <div class="slides">
