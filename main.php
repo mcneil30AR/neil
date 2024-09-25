@@ -143,33 +143,90 @@
 
             <!-- Animación -->
             <div class="video_web">
-                <div class="web_descripcion">Reel personal animado en Blender con temática de diseño web.</div>
+
                 <video class="intro_web" controls>
                     <source src="intro.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                 </video>
+                <div class="wrapper_video_descripcion_web">
+                    <div class="video_descripcion_web">
+                        <h3>Reel Web Developer</h3>
+                        <div class="v_d_w01">
+                            En este reel muestro una selección de mis proyectos web más desafiantes. Desde la adaptación
+                            a nuevos softwares y la implementación de las últimas tendencias de diseño, hasta la
+                            creación de estilos CSS innovadores. Cada uno de estos trabajos ha sido una aventura en sí
+                            misma, y las animaciones me permiten contar la historia detrás de cada reto superado. Para
+                            mí, cada día es una oportunidad de comenzar una nueva aventura y llevarla a la vida lo antes
+                            posible.
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="wrapper_circlelife"><img class="circlelife" src="circlelife.svg" alt="circlelife"></div>
 
             <div class="video_web">
-                <div class="web_descripcion">Reel personal animado en Blender con varios trabajos realizados a inicios
-                    de 2024.</div>
+
                 <video class="intro_web" controls>
                     <source src="resumen.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                 </video>
+                <div class="wrapper_video_descripcion_web">
+                    <div class="video_descripcion_web">
+                        <h3>Reel de animaciones en 3d</h3>
+                        <div class="v_d_w01">
+                            He tenido la oportunidad de trabajar con diversos programas de animación y modelado 3D, pero
+                            al unirme a Geoteco descubrí el potencial de Blender para llevar mis ideas a otro nivel.
+                            Aunque la curva de aprendizaje en este tipo de herramientas siempre presenta retos, cada
+                            error superado me ha permitido transformar desafíos en logros, y la satisfacción de ver una
+                            idea materializarse es incomparable.
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
             <div class="video_web">
-                <div class="web_descripcion">Historia estilo western animada en Blender para agencia española.</div>
+
                 <video class="intro_web" controls>
                     <source src="Westcodestory.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                 </video>
+                <div class="wrapper_video_descripcion_web">
+                    <div class="video_descripcion_web">
+                        <h3>West Code History</h3>
+                        <div class="v_d_w01">
+                            Tuve el honor de colaborar en una emocionante historia con temática del Viejo Oeste,
+                            enfocada en la seguridad de los servicios digitales. Este proyecto fue posible gracias a la
+                            invitación de la empresa Humaind, ubicada en León, España.
+                        </div>
+                    </div>
+                </div>
 
             </div>
+
+            <div class="video_web">
+
+                <video class="intro_web" controls>
+                    <source src="gen.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+                <div class="wrapper_video_descripcion_web">
+                    <div class="video_descripcion_web">
+                        <h3>Plantas de emergencia</h3>
+                        <div class="v_d_w01">
+                            En Geoteco, desempeñé el rol de diseñador gráfico, liderando la creación de contenido visual
+                            para nuestras redes sociales. Uno de los principales desafíos fue preservar la
+                            confidencialidad de los equipos sin comprometer la calidad del material. Para ello,
+                            implementamos la animación como una solución creativa, evitando mostrar detalles sensibles
+                            como números de serie o información confidencial, manteniendo una comunicación efectiva y
+                            visualmente atractiva.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- fin Animación -->
 
 
             <div class="title_cm_content">
