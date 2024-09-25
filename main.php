@@ -162,6 +162,15 @@
 
             </div>
 
+            <div class="video_web">
+                <div class="web_descripcion">Historia estilo western animada en Blender para agencia española.</div>
+                <video class="intro_web" controls>
+                    <source src="Westcodestory.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+
+            </div>
+
 
             <div class="title_cm_content">
                 <div class="title_cm_section">
