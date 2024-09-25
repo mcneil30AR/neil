@@ -500,6 +500,7 @@ h5 {
     animation: fadeRight 0.8s forwards;
     animation-delay: 1.2s;
     /* Aplica la animación al cargar */
+    backdrop-filter: blur(9.3px) !important;
 }
 
 @keyframes fadeRight {
