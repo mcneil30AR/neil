@@ -194,7 +194,7 @@
                 </video>
                 <div class="wrapper_video_descripcion_web">
                     <div class="video_descripcion_web">
-                        <h3>West Code History</h3>
+                        <h3>West Code Story</h3>
                         <div class="v_d_w01">
                             Tuve el honor de colaborar en una emocionante historia con temática del Viejo Oeste,
                             enfocada en la seguridad de los servicios digitales. Este proyecto fue posible gracias a la
